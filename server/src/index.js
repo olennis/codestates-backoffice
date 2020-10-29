@@ -6,6 +6,7 @@ const port = 3000;
 const parser= require('body-parser');
 
 const router = require('./router');
+const test = require('./testRouter');
 
 app.get('/', (req, res) => {
     res.send('hello!');
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 
 app.use(parser.json());
 app.use('/tool', router);
+app.use('/test', test);
 
 app.set('port', port);
 app.listen(app.get('port'), () => {
