@@ -1,4 +1,4 @@
 module.exports = {
-  // inviteChannel: require("./inviteChannel"),
+  inviteChannel: require("./inviteChannel"),
   kickChannel: require("./kickChannel"),
 };

@@ -1,19 +1,46 @@
+require("dotenv").config();
 const token = process.env.SLACK_TOKEN;
-const channel = process.env.CHANNEL_ID;
-const hyunkyuID = process.env.SLACK_ID_HYUNKYU;
 const axios = require("axios");
+const userinfo = require("./userinfo");
+const channelList = require("./channelList");
 
-async function kickChannel() {
-  try {
-    const response = await axios({
-      method: "post",
-      url: `https://slack.com/api/channels.kick?token=${token}&channel=${channel}&user=${hyunkyuID}`,
-    });
-    if (response.data.channel.user === UU0DXSXRV) {
-      console.log(response.dat.channel.user);
+// * 채널들이 필요하고, 채널들 안에 있는 유저 정보가 필요함
+
+/**
+ * {
+        "id": 24,
+        "name": "김현규",
+        "email": "yolo.fabian.k@gmail.com",
+        "githubUserName": "khgkimhyungyu",
+        "googleId": "108840329454889183711",
+        "log": "Full Immersive 20기,Full Immersive 19기,Full Pre 2기"
     }
-  } catch (err) {
-    console.log("user not found");
-  }
-}
-module.exports = kickChannel;
+ */
+const FAIL = "slack_kick_fail";
+const SUCCESS = "slack_kick_success";
+
+module.exports = {
+  post: async (userData) => {
+    try {
+      // const from = channelList(
+      //   parseInt(userData.log.split(",")[1].split(" ")[2].replace("기", ""))
+      // ); // *  --> 19
+      const from = userData.cohort;
+      const user = await userinfo.get(userData.email);
+      console.log(from);
+      console.log(user);
+      await axios({
+        method: "post",
+        url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from}&user=${user}`,
+      });
+      return new Promise((resolve, reject) => {
+        resolve(SUCCESS);
+      });
+    } catch (err) {
+      console.log(err.message);
+      return new Promise((resolve, reject) => {
+        reject(FAIL);
+      });
+    }
+  },
+};
