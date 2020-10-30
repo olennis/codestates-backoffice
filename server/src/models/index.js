@@ -24,18 +24,18 @@ module.exports = {
 
 			return new Promise((resolve, reject) => {
 				db.query(queryStr, (err, result) => {
-					if(err) reject(err);
-					if(result.length === 1) resolve(result[0]);
-					if(result.length < 1) resolve({
+					if (err) reject(err);
+					if (result.length === 1) resolve(result[0]);
+					if (result.length < 1) resolve({
 						name: username,
 						message: `${username}이 Full Immersive ${cohort}에 없습니다`
 					});
-					if(result.length > 1) resolve({
+					if (result.length > 1) resolve({
 						name: username,
 						message: `${username}이 Full Immersive ${cohort}에 두 명 이상입니다`
 					});
 				});
 			});
-    }
+		}
 	}
 }

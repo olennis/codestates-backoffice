@@ -1,7 +1,10 @@
-const express = require('express');
-
+const express = require("express");
 const app = express();
 const port = 3000;
+const controller = require("./controllers");
+app.get("/", (req, res) => {
+  res.send("hello!");
+});
 
 const parser= require('body-parser');
 

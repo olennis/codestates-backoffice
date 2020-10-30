@@ -1,3 +1,5 @@
+// 이미 초대된 경우 -> success 나옴
+
 require('dotenv').config()
 
 const axios = require('axios');
@@ -21,7 +23,6 @@ module.exports = {
 			// const to = toTmp.replace('기', 'th');
 			const to = userdata.cohort;		//테스트용 
 			const username = userdata.githubUserName;
-			console.log(token);
 			await axios({
 				method: "put",
 				headers: {
