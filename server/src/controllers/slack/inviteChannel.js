@@ -5,7 +5,6 @@ const userinfo = require("./userinfo");
 const channelList = require("./channelList");
 
 // * 채널들이 필요하고, 채널들 안에 있는 유저 정보가 필요함
-
 /**
  * {
         "id": 24,
@@ -16,14 +15,20 @@ const channelList = require("./channelList");
         "log": "Full Immersive 20기,Full Immersive 19기,Full Pre 2기"
     }
  */
-const FAIL = "slack_kick_fail";
-const SUCCESS = "slack_kick_success";
+
+const headers = {
+  Authorization: `Bearer ${token}`,
+  "Content-Type": "application/json",
+};
+
+const FAIL = "slack_invite_fail";
+const SUCCESS = "slack_invite_success";
 
 module.exports = {
   post: async (userData) => {
     try {
       // const from = channelList(
-      //   parseInt(userData.log.split(",")[1].split(" ")[2].replace("기", ""))
+      //   parseInt(userData.log.split(",")[0].split(" ")[2].replace("기", ""))
       // ); // *  --> 19
       const from = userData.cohort;
       const user = await userinfo.get(userData.email);
@@ -31,7 +36,12 @@ module.exports = {
       console.log(user);
       await axios({
         method: "post",
-        url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from}&user=${user}`,
+        headers: headers,
+        url: `https://slack.com/api/conversations.invite`,
+        data: {
+          channel: from,
+          users: user,
+        },
       });
       return new Promise((resolve, reject) => {
         resolve(SUCCESS);
