@@ -25,31 +25,37 @@ const FAIL = "slack_invite_fail";
 const SUCCESS = "slack_invite_success";
 
 module.exports = {
-  post: async (userData) => {
+  post: async (userdata) => {
     try {
-      // const from = channelList(
-      //   parseInt(userData.log.split(",")[0].split(" ")[2].replace("기", ""))
+      // const to = await channelList(
+      //   parseInt(userdata.log.split(",")[0].split(" ")[2].replace("기", ""))
       // ); // *  --> 19
-      const from = userData.cohort;
-      const user = await userinfo.get(userData.email);
-      console.log(from);
-      console.log(user);
+      const to = 'G01BKP93Z2N';
+      const user = await userinfo.get(userdata.email);
+      // console.log(to);
+      // console.log(user);
+
+      if (userdata.message) {
+        return new Promise((resolve, reject) => {
+          resolve(FAIL);
+        });
+      }
       await axios({
         method: "post",
         headers: headers,
         url: `https://slack.com/api/conversations.invite`,
         data: {
-          channel: from,
+          channel: to,
           users: user,
         },
-      });
+      })
       return new Promise((resolve, reject) => {
         resolve(SUCCESS);
       });
     } catch (err) {
       console.log(err.message);
       return new Promise((resolve, reject) => {
-        reject(FAIL);
+        resolve(FAIL);
       });
     }
   },

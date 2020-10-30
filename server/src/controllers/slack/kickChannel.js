@@ -20,26 +20,32 @@ const FAIL = "slack_kick_fail";
 const SUCCESS = "slack_kick_success";
 
 module.exports = {
-  post: async (userData) => {
+  post: async (userdata) => {
     try {
-      // const from = channelList(
-      //   parseInt(userData.log.split(",")[1].split(" ")[2].replace("기", ""))
+      // const from = await channelList(
+      //   parseInt(userdata.log.split(",")[1].split(" ")[2].replace("기", ""))
       // ); // *  --> 19
-      const from = userData.cohort;
-      const user = await userinfo.get(userData.email);
-      console.log(from);
-      console.log(user);
+      const from = 'G01BKP93Z2N';
+      const user = await userinfo.get(userdata.email);
+      // console.log(from);
+      // console.log(user);
+
+      if (userdata.message) {
+        return new Promise((resolve, reject) => {
+          resolve(FAIL);
+        });
+      }
       await axios({
         method: "post",
         url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from}&user=${user}`,
-      });
+      })
       return new Promise((resolve, reject) => {
         resolve(SUCCESS);
       });
     } catch (err) {
       console.log(err.message);
       return new Promise((resolve, reject) => {
-        reject(FAIL);
+        resolve(FAIL);
       });
     }
   },
