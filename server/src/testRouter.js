@@ -23,12 +23,15 @@ router.post('/gitTeam', async (req, res) => {
 
 		//Github API
 		personResult[person].push(await controller.githubAPI.join.post({ cohort: req.body.cohort, githubUserName: person }));
-		personResult[person].push(await controller.githubAPI.join.post({ cohort: req.body.cohort, githubUserName: person }));
+		personResult[person].push(await controller.githubAPI.kick.post({ cohort: req.body.cohort, githubUserName: person }));
 
 		//Slack API
+		// personResult[person].push(await controller.githubAPI.join.post({ cohort: req.body.cohort, githubUserName: person }));
+		// personResult[person].push(await controller.githubAPI.kick.post({ cohort: req.body.cohort, githubUserName: person }));
 
 		//Calendar API
-
+		// personResult[person].push(await controller.githubAPI.join.post({ cohort: req.body.cohort, githubUserName: person }));
+		// personResult[person].push(await controller.githubAPI.kick.post({ cohort: req.body.cohort, githubUserName: person }));
 		//결과 반환
 		return personResult
 	}));
