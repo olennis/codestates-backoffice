@@ -9,13 +9,21 @@ app.get("/", (req, res) => {
   res.send("hello!");
 });
 
+//! invite
 app.post("/slack", (req, res) => {
   controller.slackAPI.inviteChannel.post(req.body).then((result) => {
     console.log(result);
     res.send(result);
   });
 });
-// app.post("/slack", controller.slackAPI.inviteChannel.post);
+
+//! kick
+// app.post("/slack", (req, res) => {
+//   controller.slackAPI.kickChannel.post(req.body).then((result) => {
+//     console.log(result);
+//     res.send(result);
+//   });
+// });
 
 app.set("port", port);
 app.listen(app.get("port"), () => {
