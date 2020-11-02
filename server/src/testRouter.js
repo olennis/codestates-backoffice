@@ -13,6 +13,11 @@ router.post('/git', async (req, res) => {
 		});
 });
 
+router.get('/googletest', async (req, res) => {
+	let tmp = await controller.calendarAPI.test.getGoogleToken()
+	res.send(tmp);
+})
+
 //여러 사람들의 여러 툴들을 이동, 결과 
 router.post('/gitTeam', async (req, res) => {
 	//req.body의 내용을 토대로 사람 정보를 DB에서 가져와서
