@@ -14,8 +14,10 @@ router.post('/git', async (req, res) => {
 });
 
 router.get('/googletest', async (req, res) => {
-	let tmp = await controller.calendarAPI.test.list();
-	res.send(tmp);
+	await controller.calendarAPI.kick.post('c_q2m6da41khi79tp028oemdaa8g@group.calendar.google.com', { email: 'wonjundero@gmail.com' })
+	.then(r => res.send(r));
+	// res.send(tmp);
+	// let tmp = await controller.calendarAPI.join.post("")
 })
 
 //여러 사람들의 여러 툴들을 이동, 결과 

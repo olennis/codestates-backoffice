@@ -1,6 +1,8 @@
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
+const { resolve } = require('path');
+const { rejects } = require('assert');
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar'];
@@ -9,19 +11,17 @@ const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 // time.
 const TOKEN_PATH = 'token.json';
 
-// Load client secrets from a local file.
-fs.readFile('./credentials.json', (err, content) => {
-	if (err) return console.log('Error loading client secret file:', err);
-	// Authorize a client with credentials, then call the Google Calendar API.
-	authorize(JSON.parse(content), listEvents);
-});
-
-/**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
- */
+module.exports = {
+	get: function() {
+		return new Promise ((resolve, reject) => {
+			fs.readFile(__dirname + '/credentials.json', (err, content) => {
+				if (err) return console.log('Error loading client secret file:', err);
+				// Authorize a client with credentials, then call the Google Calendar API.
+				authorize(JSON.parse(content), resolve);
+			});
+		})
+	}
+}
 function authorize(credentials, callback) {
 	const { client_secret, client_id, redirect_uris } = credentials.installed;
 	const oAuth2Client = new google.auth.OAuth2(
@@ -35,12 +35,6 @@ function authorize(credentials, callback) {
 	});
 }
 
-/**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
- * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback for the authorized client.
- */
 function getAccessToken(oAuth2Client, callback) {
 	const authUrl = oAuth2Client.generateAuthUrl({
 		access_type: 'offline',
@@ -66,23 +60,3 @@ function getAccessToken(oAuth2Client, callback) {
 	});
 }
 
-/**
- * Lists the next 10 events on the user's primary calendar.
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
-function listEvents(auth) {
-	const calendar = google.calendar({ version: 'v3', auth });
-	calendar.calendarList.list({}, (err, res) => {
-		if (err) return console.log('The API returned an error: ' + err);
-		console.log(res.data.items[1]);
-	});
-}
-
-module.exports = {
-	join: async () => {
-
-	},
-	kick: async () => {
-
-	}
-}

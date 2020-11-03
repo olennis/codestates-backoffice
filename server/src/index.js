@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const controller = require("./controllers");
 app.get("/", (req, res) => {
-  res.send("hello!");
+  res.send(req.query);
 });
 
 const parser= require('body-parser');
