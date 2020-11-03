@@ -14,7 +14,7 @@ router.post('/git', async (req, res) => {
 });
 
 router.get('/googletest', async (req, res) => {
-	let tmp = await controller.calendarAPI.test.getGoogleToken()
+	let tmp = await controller.calendarAPI.test.list();
 	res.send(tmp);
 })
 
