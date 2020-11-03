@@ -1,2 +1,4 @@
 .env
 node_modules
+src/controllers/calendar/credentials.json
+src/controllers/calendar/token.json
