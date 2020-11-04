@@ -22,26 +22,22 @@ const SUCCESS = "slack_kick_success";
 module.exports = {
   post: async (userdata) => {
     try {
-      // const from = await channelList(
-      //   parseInt(userdata.log.split(",")[1].split(" ")[2].replace("기", ""))
-      // ); // *  --> 19
-      const from = ['G01BKP93Z2N','G01BKP93Z2N'];
+      const from = await channelList.get(
+        parseInt(userdata.log.split(",")[1].split(" ")[2].replace("기", ""))
+      ); // *  --> 19
+      // const from = ['G01BKP93Z2N','G01BKP93Z2N'];
       const user = await userinfo.get(userdata.email);
       // console.log(from);
       // console.log(user);
-
-      if (userdata.message) {
-        return new Promise((resolve, reject) => {
-          resolve(FAIL);
-        });
-      }
+			console.log('kick:' + userdata.log.split(",")[1])
+      console.log(from, user);
       //테스트 필요, 두 개의 채널이 배열에 있을 때 두 개 일괄적으로 처리되는지 확인 필요 -> postman 에서,,, -> 성공
-      for(let i = 0; i < from.length; i++){
-        await axios({
-          method: "post",
-          url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from[i]}&user=${user}`,
-        });
-      }
+      // for(let i = 0; i < from.length; i++){
+      //   await axios({
+      //     method: "post",
+      //     url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from[i]}&user=${user}`,
+      //   });
+      // }
       return new Promise((resolve, reject) => {
         resolve(SUCCESS);
       });

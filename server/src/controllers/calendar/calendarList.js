@@ -14,6 +14,7 @@ module.exports = {
           if (err) {
             console.log(err);
             // resolve(FAIL);
+            resolve({'message' : 'google_calendar_error'});
           }
           res.data.items.map((calendar) => {
             if (calendar.summary === makeCohort) {

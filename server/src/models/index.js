@@ -28,11 +28,11 @@ module.exports = {
 					if (result.length === 1) resolve(result[0]);
 					if (result.length < 1) resolve({
 						name: username,
-						message: `${username}이 Full Immersive ${cohort}에 없습니다`
+						message: `${username}이 Full Immersive ${cohort}기에 없습니다`
 					});
 					if (result.length > 1) resolve({
 						name: username,
-						message: `${username}이 Full Immersive ${cohort}에 두 명 이상입니다`
+						message: `${username}이 Full Immersive ${cohort}기에 두 명 이상입니다`
 					});
 				});
 			});
