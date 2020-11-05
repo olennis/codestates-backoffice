@@ -11,7 +11,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       getCalendarId.get(userData.log.split(",")[1])
         .then(cohortId => {
-          if(cohortId.message) {resolve(FAIL);}
+          if(cohortId.message) {resolve(cohortId.message);}
           console.log('kick' + userData.log.split(",")[1]);
           console.log(cohortId, userData.email);
 

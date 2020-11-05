@@ -21,6 +21,8 @@ module.exports = {
               resolve(calendar.id);
             }
           });
+          resolve({'message' : 'google_calendar_doesnt_exist'});
+
         });
       });
     });
