@@ -1,10 +1,13 @@
 import React from 'react';
+import Index from './components/atoms/index'
+
 
 function App() {
   return (
     <div className="App">
       <div>
-        <p>Fabian</p>
+        
+        <Index></Index>
       </div>
     </div>
   );
