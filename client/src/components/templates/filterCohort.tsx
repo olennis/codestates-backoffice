@@ -1,11 +1,13 @@
 import React from 'react';
+import CohortSelect from '../atoms/CohortSelect'
 
-const filterCohort = () => {
+const FilterCohort = () => {
     return (
         <div>
-            
+            <CohortSelect></CohortSelect>
+        
         </div>
     );
 };
 
-export default filterCohort;
+export default FilterCohort;
