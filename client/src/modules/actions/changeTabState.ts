@@ -16,7 +16,9 @@ const changeTabState = (state: TabState = initialState, action: TabAction) => {
     switch (action.type) {
         case TAB:
             return { tab: state.tab }
-    }
+        default:
+            return state
+    };
 }
 
 export default changeTabState;
