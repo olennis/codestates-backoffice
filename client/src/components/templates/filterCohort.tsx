@@ -4,6 +4,7 @@ import CohortSelect from '../atoms/CohortSelect'
 const FilterCohort = () => {
     return (
         <div>
+            
             <CohortSelect></CohortSelect>
         
         </div>

@@ -1,16 +1,20 @@
 import React,{useState} from 'react';
-const NameInput = ({setName}:any) => {
-    
+const NameInput = () => {
+    const [name, setName] = useState('')
     return (
         <div>
-            <input 
-                name='name' 
+            <input
                 type='text'
-                value='name' 
+                value={name}
+                placeholder='수강생의 이름을 입력해주세요' 
                 onChange={(e)=>{
                     setName(e.target.value)
+                    console.log(name)
                 }}
-                ></input>
+                >
+
+                </input>
+                <button>클릭!</button>
         </div>
     );
 };

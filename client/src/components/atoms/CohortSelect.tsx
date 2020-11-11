@@ -23,8 +23,8 @@ const CohortSelect = () => {
                 <option>Part Pre</option>
             </select>
             <input type='number'
-                    placeholder='기수를 입력해주세요'
-                    min='0'
+                    placeholder='수강생의 기수를 입력해주세요'
+                    min='1'
                     onChange={(e)=>{
                         setNumber(e.target.value)
                         }}>
@@ -35,7 +35,8 @@ const CohortSelect = () => {
                 changeCohortState({type:SETCOHORT,payload:payload})
                 }
             }
-                >클릭!</button>
+                >클릭!
+            </button>
                     <div>{cohort}</div>
         </div>
     );
