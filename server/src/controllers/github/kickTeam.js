@@ -15,13 +15,13 @@ module.exports = {
       const username = userdata.githubUserName;
       console.log(from, username);
 
-      // await axios({
-      //   method: "delete",
-      //   headers: {
-      //     Authorization: `token ${token}`,
-      //   },
-      //   url: `https://api.github.com/orgs/codestates/teams/${from}/memberships/${username}`,
-      // });
+      await axios({
+        method: "delete",
+        headers: {
+          Authorization: `token ${token}`,
+        },
+        url: `https://api.github.com/orgs/codestates/teams/${from}/memberships/${username}`,
+      });
       return new Promise((resolve, reject) => {
         resolve(SUCCESS);
       });

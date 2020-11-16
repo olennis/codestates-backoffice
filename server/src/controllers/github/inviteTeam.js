@@ -17,13 +17,13 @@ module.exports = {
 			// const to = userdata.cohort;		//테스트용 
 			const username = userdata.githubUserName;
 			console.log(to, username)
-			// await axios({
-			// 	method: "put",
-			// 	headers: {
-			// 		Authorization: `token ${token}`,
-			// 	},
-			// 	url: `https://api.github.com/orgs/codestates/teams/${to}/memberships/${username}`,
-			// });
+			await axios({
+				method: "put",
+				headers: {
+					Authorization: `token ${token}`,
+				},
+				url: `https://api.github.com/orgs/codestates/teams/${to}/memberships/${username}`,
+			});
 			return new Promise((resolve, reject) => {
 				resolve(SUCCESS);
 			});

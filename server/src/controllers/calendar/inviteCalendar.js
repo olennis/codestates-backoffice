@@ -20,21 +20,21 @@ module.exports = {
 						const calendar = google.calendar({ version: 'v3', auth: res });	//토큰!!!
 						const requestBody = {
 							scope: {
-								type: "user",
+								type: "default",	//?
 								value: `${userData.email}`
 							},
 							role: "reader"
 						}
-						// calendar.acl.insert({
-						// 	calendarId: cohortId,
-						// 	requestBody: requestBody
-						// }, (err, res) => {
-						// 		if (err) {
-						// 			console.log(err);
-						// 			resolve(FAIL);
-						// 		}
-						// 		resolve(SUCCESS);
-						// 	});
+						calendar.acl.insert({
+							calendarId: cohortId,
+							requestBody: requestBody
+						}, (err, res) => {
+								if (err) {
+									console.log(err);
+									resolve(FAIL);
+								}
+								resolve(SUCCESS);
+							});
 						resolve(SUCCESS); //test 코드 꼭 삭제!
 					});
 				})

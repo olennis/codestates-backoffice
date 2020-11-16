@@ -1,6 +1,24 @@
 const db = require('../db');
 
 module.exports = {
+	getUserByCohort: {
+		get: (cohort) => {
+			console.log(cohort);
+			const queryStr = `
+			SELECT u.id, u.name, u.email, u.githubUserName, u.googleId
+			FROM user as u, user_cohort as uc
+			WHERE u.id = uc.userId AND uc.cohortId IN (
+			SELECT id FROM cohort WHERE name = '${cohort}') 
+			`
+
+			return new Promise((resolve, reject) => {
+				db.query(queryStr, (err, result) => {
+					if (err) reject(err);
+					resolve(result);
+				});
+			});
+		}
+	},
 	userdata: {
 		get: (cohort, username) => {
 			const queryStr = `

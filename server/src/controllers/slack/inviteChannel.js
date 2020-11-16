@@ -36,17 +36,17 @@ module.exports = {
 			// console.log(user);
 			console.log('join:' + userdata.log.split(",")[0])
 			console.log(to, user);
-			// for(let i = 0; i < to.length; i++){
-      //   await axios({
-			// 		method: "post",
-			// 		headers: headers,
-			// 		url: `https://slack.com/api/conversations.invite`,
-			// 		data: {
-			// 			channel: to[i],
-			// 			users: user,
-			// 		},
-			// 	})
-      // }
+			for(let i = 0; i < to.length; i++){
+        await axios({
+					method: "post",
+					headers: headers,
+					url: `https://slack.com/api/conversations.invite`,
+					data: {
+						channel: to[i],
+						users: user,
+					},
+				})
+      }
 			return new Promise((resolve, reject) => {
 				resolve(SUCCESS);
 			});
