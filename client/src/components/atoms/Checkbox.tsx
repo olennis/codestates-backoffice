@@ -3,10 +3,10 @@ import * as React from 'react';
 type Props = {
     
 };
-export const StudentList = (props: Props) => {
+export const Checkbox = (props: Props) => {
     return (
         <div>
-            <Test></Test>
+            
         </div>
     );
 };
