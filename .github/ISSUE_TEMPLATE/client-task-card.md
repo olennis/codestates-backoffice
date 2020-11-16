@@ -1,9 +1,9 @@
 ---
 name: Client Task Card
 about: 클라이언트 Task Card 입니다.
-title: "[Client] `Atoms`,`Molecules`,`Template`,`Page` / feature/ 'Task에 대한 내용입력'"
-labels: ''
-assignees: codeFabian
+title: "[Client] `Atoms`,`Molecules`,`Template`,`Page` / 'Task에 대한 내용입력'"
+labels: client
+assignees: ''
 
 ---
 
