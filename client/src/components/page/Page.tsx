@@ -15,15 +15,14 @@ const defaultCheck: Checkbok = {
 }
 
 
-
 function Page() {
   const [check, setCheck] = useState(defaultCheck);
-
+  const [tab, setTab] = useState(1);
   return (
     <div>
       <b>나는 페이지</b>
       <SearchCohort></SearchCohort>
-      <ToolTab />
+      <ToolTab setTab={setTab} />
       <StudentList></StudentList>
     </div>
   );

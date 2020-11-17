@@ -8,15 +8,18 @@ import { ChangeCohortTab } from "../atoms/ChangeCohortTab"
 import { WorksView } from "../atoms/WorksView"
 import styled from 'styled-components'
 
+type Props = {
+    setTab: any
+};
 
-export const Tabs = () => {
-    const [tab, setTab] = useState(1);
+export const Tabs = (props: Props) => {
 
     return (
         <TabSection>
-            <StudentInfo setTab={setTab} />
-            <ChangeCohortTab setTab={setTab} />
-            <WorksView setTab={setTab} />
+            나는탭
+            <StudentInfo setTab={props.setTab} />
+            <ChangeCohortTab setTab={props.setTab} />
+            <WorksView setTab={props.setTab} />
         </TabSection>
     );
 };
