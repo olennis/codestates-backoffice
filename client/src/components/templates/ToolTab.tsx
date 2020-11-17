@@ -8,9 +8,11 @@ import styled from 'styled-components'
 
 
 type Props = {
+    data:Array<[]>,
 
 };
 export const ToolTab = (props: Props) => {
+    console.log('data:',props.data)
     return (
         <Section>
             여긴 탬플릿
