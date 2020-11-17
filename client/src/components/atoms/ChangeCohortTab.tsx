@@ -11,8 +11,8 @@ export const ChangeCohortTab = (props: Props) => {
         console.log(event.target.value)
     }
     return (
-        <div>
+        <span>
             <button onClick={(event: any) => moveCohortTab(event)} value={2}>기수 이동</button>
-        </div>
+        </span>
     );
 };

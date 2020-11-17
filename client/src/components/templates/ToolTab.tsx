@@ -9,18 +9,19 @@ import styled from 'styled-components'
 
 type Props = {
     data:Array<[]>,
-
+    setTab: any
 };
+
 export const ToolTab = (props: Props) => {
     console.log('data:',props.data)
     return (
         <Section>
             여긴 탬플릿
-            <Tabs />
+            <Tabs setTab={props.setTab} />
             <StateBar />
             <AllCheckBar />
             <CheckToolBar />
-        </Section>
+        </Section >
     );
 };
 

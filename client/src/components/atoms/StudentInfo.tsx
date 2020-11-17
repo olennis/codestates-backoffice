@@ -15,8 +15,8 @@ export const StudentInfo = (props: Props) => {
     }
 
     return (
-        <div>
+        <span>
             <button onClick={(event: any) => studentTab(event)} value={1}>수강생 정보</button>
-        </div>
+        </span>
     );
 };
