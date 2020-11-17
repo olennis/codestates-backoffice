@@ -16,13 +16,18 @@ const defaultCheck: Checkbok = {
 
 
 function Page() {
+  const [cohort, setCohort] = useState('')
+  const [nth, setNth] = useState('')
+  const [name, setName] = useState('')
+  const [data, setData] = useState([])
   const [check, setCheck] = useState(defaultCheck);
   const [tab, setTab] = useState(1);
   return (
     <div>
       <b>나는 페이지</b>
-      <SearchCohort></SearchCohort>
-      <ToolTab setTab={setTab} />
+
+      <SearchCohort cohort = {cohort} setCohort = {setCohort} setNth = {setNth} setName = {setName} name={name} nth={nth} setData={setData}></SearchCohort>
+      <ToolTab data={data} setTab={setTab} />
       <StudentList></StudentList>
     </div>
   );

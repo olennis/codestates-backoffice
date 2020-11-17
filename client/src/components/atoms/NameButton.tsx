@@ -2,7 +2,8 @@
 import * as React from 'react';
 import axios from 'axios'
 type Name = {
-    name:string
+    name:string,
+    setData:any
 };
 
 // const axiosRequest = () =>{
@@ -14,9 +15,12 @@ export const NameButton = (Props: Name) => {
         <span>
             <button onClick={()=>{
                 axios.get(
-                    `https://3ab605da59b9.ngrok.io/tool/getUserByName?name=${Props.name}`
+                    ` https://950c32fb08f1.ngrok.io/tool/getUserByName?name=${Props.name}`
                     )
-                    .then((res)=>{console.log(res)})
+                    .then((res)=>{
+                        console.log(res)
+                        Props.setData(res.data)
+                    })
                     .catch((err)=>{console.log(err)})
             }}>이름 찾기!</button>
         </span>
