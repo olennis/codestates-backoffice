@@ -4,7 +4,8 @@ import {Student} from '../molecules/Student'
 type Props = {
     data:Array<[]>,
     setStudentData:any,
-    studentData:any
+    studentData:any,
+    tab:any
 };
 export const StudentList = (props: Props) => {
 
@@ -27,17 +28,31 @@ export const StudentList = (props: Props) => {
         return props.studentData  
     }
 
+
+    console.log('props.tabNo:',typeof props.tab)
     return (
-        <div>
-            {props.data.map((student:any, index:number)=>{
-                return (
-                    <div key={index}>
-                        <input type='checkbox' onClick={(e:any) => {chooseStudent(e,index)}}></input>
-                        <Student student={student}></Student>
-            
-                    </div>
-                )
-            })}
-        </div>
+        <>
+            {
+                props.tab === '1'? 
+                <div>
+                    빠가사리
+                    {props.data.map((student:any, index:number)=>{
+                        return (
+                            <div key={index}>
+                            <input type='checkbox' onClick={(e:any) => {chooseStudent(e,index)}}></input>
+                            <Student student={student}></Student>
+                            </div>
+                        )
+                    })}    
+                </div> : 
+                props.tab === '2'?
+                <div>2번 페이지 입니다</div>:
+                <div>3번 페이지 입니다</div>
+            }
+        </>
+        
     );
 };
+
+
+
