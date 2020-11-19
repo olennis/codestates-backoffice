@@ -20,19 +20,25 @@ function Page() {
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
-  const [tab, setTab] = useState(1);
+
+  const [studentData, setStudentData] = useState([])
+  const [tab, setTab] = useState('1');
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
+
 
 
   return (
     <div>
       <b>나는 페이지</b>
 
+
       <SearchCohort cohort={cohort} setCohort={setCohort} setNth={setNth} setName={setName} name={name} nth={nth} setData={setData} ></SearchCohort>
       <ToolTab setTab={setTab} setGitCheck={setGitCheck} />
-      <StudentList data={data}></StudentList>
+      <StudentList data={data} setStudentData={setStudentData} studentData={studentData} tab={tab}></StudentList>
+
+      
     </div>
   );
 }
