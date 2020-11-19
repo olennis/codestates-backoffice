@@ -20,6 +20,7 @@ function Page() {
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
+  const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState(1);
 
   
@@ -30,7 +31,7 @@ function Page() {
 
       <SearchCohort cohort = {cohort} setCohort = {setCohort} setNth = {setNth} setName = {setName} name={name} nth={nth} setData={setData} ></SearchCohort>
       <ToolTab setTab={setTab}/>
-      <StudentList data={data}></StudentList>
+      <StudentList data={data} setStudentData={setStudentData} studentData={studentData}></StudentList>
     </div>
   );
 }
