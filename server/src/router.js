@@ -12,6 +12,13 @@ router.get('/getUserInfo', async(req, res) => {
 	res.send(userdata);
 });
 
+router.get('/getUserByName', async(req, res) => {
+	console.log(req.query.name);
+	const userdata = await model.getUserByName.get(req.query.name.trim());
+	res.header("Access-Control-Allow-Origin", "*");
+	res.send(userdata);
+});
+
 // * POST /moveCohort
 router.post('/moveCohort', async (req, res) => {
 	console.log(req.body);

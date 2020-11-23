@@ -4,11 +4,54 @@ module.exports = {
 	getUserByCohort: {
 		get: (cohort) => {
 			console.log(cohort);
+			// const queryStr = `
+			// SELECT u.id, u.name, u.email, u.githubUserName, u.googleId
+			// FROM user as u, user_cohort as uc
+			// WHERE u.id = uc.userId AND uc.cohortId IN (
+			// SELECT id FROM cohort WHERE name = '${cohort}') 
+			// `
 			const queryStr = `
-			SELECT u.id, u.name, u.email, u.githubUserName, u.googleId
-			FROM user as u, user_cohort as uc
-			WHERE u.id = uc.userId AND uc.cohortId IN (
-			SELECT id FROM cohort WHERE name = '${cohort}') 
+			SELECT u.id, u.name, u.email, u.githubUserName, u.googleId, 
+			GROUP_CONCAT(
+				DISTINCT uch.name 
+				ORDER BY uch.startDate DESC
+			) as log
+			FROM user_cohort_history as uch, user as u
+			WHERE uch.userId = u.id AND userId IN (
+				SELECT u.id
+				FROM user as u, user_cohort as uc, cohort as c
+				WHERE uc.cohortId = c.id AND u.id = uc.userId 
+				AND c.id IN (
+					SELECT cohort.id FROM cohort 
+					WHERE cohort.name = '${cohort}') 
+			)
+			GROUP BY uch.userId;
+			`
+
+			return new Promise((resolve, reject) => {
+				db.query(queryStr, (err, result) => {
+					if (err) reject(err);
+					resolve(result);
+				});
+			});
+		}
+	},
+	getUserByName: {
+		get: (name) => {
+			console.log(name);
+			const queryStr = `
+			SELECT u.id, u.name, u.email, u.githubUserName, u.googleId, 
+			GROUP_CONCAT(
+				DISTINCT uch.name 
+				ORDER BY uch.startDate DESC
+			) as log
+			FROM user_cohort_history as uch, user as u
+			WHERE uch.userId = u.id AND userId IN (
+				SELECT u.id
+				FROM user as u
+				WHERE u.name = '${name}'
+			)
+			GROUP BY uch.userId;
 			`
 
 			return new Promise((resolve, reject) => {
