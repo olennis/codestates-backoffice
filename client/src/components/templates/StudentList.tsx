@@ -1,11 +1,14 @@
 // @flow 
 import * as React from 'react';
-import { Student } from '../molecules/Student'
-type Props = {
-    data: Array<[]>,
-    setStudentData: any,
-    studentData: any,
-    tab: any
+import {Student} from '../molecules/Student'
+import {MoveCohort} from '../molecules/MoveCohort'
+interface Props {
+    data:Array<[]>,
+    setStudentData:Function,
+    studentData:Array<[]>,
+    tab:string,
+    gitCheck:any
+
 };
 export const StudentList = (props: Props) => {
 
@@ -33,21 +36,32 @@ export const StudentList = (props: Props) => {
     return (
         <>
             {
-                props.tab === '1' ?
-                    <div>
-                        빠가사리
-                    {props.data.map((student: any, index: number) => {
+                props.tab === '1'? 
+                <div>
+                    수강생 정보 페이지 입니다
+                    {props.data.map((student:any, index:number)=>{
+
                         return (
                             <div key={index}>
                                 <input type='checkbox' onClick={(e: any) => { chooseStudent(e, index) }}></input>
                                 <Student student={student}></Student>
                             </div>
                         )
-                    })}
-                    </div> :
-                    props.tab === '2' ?
-                        <div>2번 페이지 입니다</div> :
-                        <div>3번 페이지 입니다</div>
+                    })}    
+                </div> : 
+                props.tab === '2'?
+                <div>
+                    기수이동 페이지 입니다
+                    {props.data.map((student:any, index:number)=>{
+                        return (
+                            <div key={index}>
+                            <input type='checkbox' onClick={(e:any) => {chooseStudent(e,index)}}></input>
+                            <MoveCohort student={student} gitCheck={props.gitCheck}></MoveCohort>
+                            </div>
+                        )
+                    })}    
+                </div>:
+                <div>과제 현황 페이지 입니다</div>
             }
         </>
 

@@ -20,7 +20,6 @@ function Page() {
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
-
   const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState('1');
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
@@ -35,6 +34,7 @@ function Page() {
 
 
       <SearchCohort cohort={cohort} setCohort={setCohort} setNth={setNth} setName={setName} name={name} nth={nth} setData={setData} ></SearchCohort>
+
       <ToolTab setTab={setTab} setGitCheck={setGitCheck} gitCheck={gitCheck} />
       <StudentList data={data} setStudentData={setStudentData} studentData={studentData} tab={tab}></StudentList>
 

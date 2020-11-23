@@ -14,6 +14,7 @@ export const CohortButton = (Props: Cohort) => {
                 console.log(`${Props.cohort} ${Props.nth}기`)
                 axios.get(
                     ` https://c152b948ccfa.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
+
                 )
                     .then((res) => {
                         console.log('수강생 데이텨 : ', res)
