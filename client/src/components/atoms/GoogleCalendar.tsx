@@ -7,7 +7,7 @@ type Props = {
 export const GoogleCalendar = (props: Props) => {
     return (
         <span>
-            <CheckAtoms /> 구글캘린더
+            {/* <CheckAtoms /> 구글캘린더 */}
         </span>
     );
 };

@@ -34,10 +34,11 @@ function Page() {
 
 
       <SearchCohort cohort={cohort} setCohort={setCohort} setNth={setNth} setName={setName} name={name} nth={nth} setData={setData} ></SearchCohort>
-      <ToolTab setTab={setTab} setGitCheck={setGitCheck} />
-      <StudentList data={data} setStudentData={setStudentData} studentData={studentData} tab={tab} gitCheck={gitCheck}></StudentList>
 
-      
+      <ToolTab setTab={setTab} setGitCheck={setGitCheck} gitCheck={gitCheck} />
+      <StudentList data={data} setStudentData={setStudentData} studentData={studentData} tab={tab}></StudentList>
+
+
     </div>
   );
 }

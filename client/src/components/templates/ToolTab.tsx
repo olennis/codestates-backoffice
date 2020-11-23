@@ -9,6 +9,7 @@ import styled from 'styled-components'
 type Props = {
     setTab: any,
     setGitCheck: any
+    gitCheck: any
 };
 
 export const ToolTab = (props: Props) => {
@@ -18,7 +19,7 @@ export const ToolTab = (props: Props) => {
             여긴 탬플릿
             <Tabs setTab={props.setTab} />
             <StateBar />
-            <CheckToolBar setGitCheck={props.setGitCheck} />
+            <CheckToolBar gitCheck={props.gitCheck} setGitCheck={props.setGitCheck} />
         </Section >
     );
 };
