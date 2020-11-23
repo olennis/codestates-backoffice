@@ -2,24 +2,24 @@
 import axios from 'axios';
 import * as React from 'react';
 type Cohort = {
-    cohort:string,
-    nth:string,
-    setData:any
-    
+    cohort: string,
+    nth: string,
+    setData: any
+
 };
 export const CohortButton = (Props: Cohort) => {
     return (
         <span>
-            <button onClick={()=>{
+            <button onClick={() => {
                 console.log(`${Props.cohort} ${Props.nth}기`)
                 axios.get(
-                    ` https://6c7271b23406.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
-                    )
-                    .then((res)=>{
-                        console.log('수강생 데이텨 : ',res)
+                    ` https://c152b948ccfa.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
+                )
+                    .then((res) => {
+                        console.log('수강생 데이텨 : ', res)
                         Props.setData(res.data)
                     })
-                    .catch((err)=>{console.log(err)})
+                    .catch((err) => { console.log(err) })
             }}>
                 기수 찾기!
                 </button>

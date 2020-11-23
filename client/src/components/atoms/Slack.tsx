@@ -8,7 +8,7 @@ type Props = {
 export const Slack = (props: Props) => {
     return (
         <span>
-            <CheckAtoms /> 슬랙
+            {/* <CheckAtoms /> 슬랙 */}
         </span>
     );
 };

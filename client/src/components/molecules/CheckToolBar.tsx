@@ -8,6 +8,7 @@ import styled from 'styled-components'
 
 type Props = {
     setGitCheck: any;
+    gitCheck: any
 };
 
 
@@ -15,7 +16,7 @@ export const CheckToolBar = (props: Props) => {
     return (
         <CheckToolSection>
             나는 툴 체크박스
-            <GithubTeam setGitCheck={props.setGitCheck} />
+            <GithubTeam setGitCheck={props.setGitCheck} gitCheck={props.gitCheck} />
             <Slack />
             <GoogleCalendar />
         </CheckToolSection>

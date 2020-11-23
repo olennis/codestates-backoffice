@@ -3,13 +3,16 @@ import React from 'react'
 import { CheckAtoms } from "./CheckAtoms"
 
 type Props = {
+    gitCheck: any
     setGitCheck: any
 };
+
+
 
 export const GithubTeam = (props: Props) => {
     return (
         <div>
-            <CheckAtoms /> 깃헙팀
+            <input type="checkbox" onClick={(event: any) => props.setGitCheck(event.target.checked)} />
         </div>
     );
 };
