@@ -1,13 +1,14 @@
 // @flow 
 import * as React from 'react';
-import { CheckAtoms } from "../atoms/CheckAtoms"
-type Props = {
 
+type Props = {
+    calendar: any
+    setCalendar: any
 };
 export const GoogleCalendar = (props: Props) => {
     return (
-        <span>
-            {/* <CheckAtoms /> 구글캘린더 */}
-        </span>
+        <div>
+            <input type="checkbox" onClick={(event: any) => props.setCalendar(event.target.checked)} /> 구글캘린더
+        </div>
     );
 };
