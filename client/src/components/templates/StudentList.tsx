@@ -1,5 +1,5 @@
 // @flow 
-import * as React from 'react';
+import React, { useState } from 'react';
 import {Student} from '../molecules/Student'
 import {MoveCohort} from '../molecules/MoveCohort'
 interface Props {
@@ -7,12 +7,21 @@ interface Props {
     setStudentData:Function,
     studentData:Array<[]>,
     tab:string,
-    gitCheck:any
+    gitCheck:any,
+    setData:Function,
+    
 
 };
 export const StudentList = (props: Props) => {
-
-    const chooseStudent = (e: any, index: number) => {
+    const [isAllCheck, setAllCheck] = useState(false);
+    /**
+     * 1. 맨 처음 데이터를 받을 때부터 boolean 값 추가(checked 참조값) O
+     * 2. all 체크박스를 클릭하면 > 상태값 변경(e.target.checked)
+     * 3. 개별 데이터 체크박스는 2번의 상태값 참조
+     */
+    // 11.23 서버 닫힘
+    // if props.data에 체크밸류값이 있다면 > 1번 성공
+    const sendData = (e: any, index: number, data:any) => {
         if (e.target.checked) {
             console.log('체크 상태:', e.target.checked)
             props.studentData.push(props.data[index])
@@ -30,24 +39,30 @@ export const StudentList = (props: Props) => {
 
         return props.studentData
     }
-
-
-    console.log('props.tabNo:', typeof props.tab)
+    const chooseAll = (e:any) => {
+        props.data.forEach((student:any)=>student.checkValue = e.target.checked)
+        setAllCheck(!isAllCheck)
+    }
+    
     return (
         <>
             {
                 props.tab === '1'? 
                 <div>
                     수강생 정보 페이지 입니다
-                    {props.data.map((student:any, index:number)=>{
+                    <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>
+                    {props.data.map((student:any, index:number) => {
 
-                        return (
-                            <div key={index}>
-                                <input type='checkbox' onClick={(e: any) => { chooseStudent(e, index) }}></input>
-                                <Student student={student}></Student>
-                            </div>
-                        )
-                    })}    
+                        if(isAllCheck){
+                            return (
+                            <Student key={index} index={index} student={student}></Student>
+                            )
+                            
+                        }
+                        else{
+                            return <Student key={index} index={index} student={student}></Student>
+                        }
+                    })}
                 </div> : 
                 props.tab === '2'?
                 <div>
@@ -55,7 +70,7 @@ export const StudentList = (props: Props) => {
                     {props.data.map((student:any, index:number)=>{
                         return (
                             <div key={index}>
-                            <input type='checkbox' onClick={(e:any) => {chooseStudent(e,index)}}></input>
+                            {/* <input type='checkbox' onChange={(e:any) => {chooseOne(e,index,student)}}></input> */}
                             <MoveCohort student={student} gitCheck={props.gitCheck}></MoveCohort>
                             </div>
                         )
