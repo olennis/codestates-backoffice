@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { SearchCohort } from '../templates/SearchCohort'
 import { ToolTab } from '../templates/ToolTab'
 import { StudentList } from '../templates/StudentList'
+import { ActionSection } from '../templates/ActionSection';
 
 // type Checkbok = {
 //   check: boolean
@@ -14,6 +15,7 @@ import { StudentList } from '../templates/StudentList'
 
 function Page() {
   const [cohort, setCohort] = useState('')
+  const [action, setAction] = useState('')
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
@@ -22,6 +24,7 @@ function Page() {
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
+
 
   return (
     <div>
@@ -44,7 +47,12 @@ function Page() {
         slackCheck={slackCheck}
         calendar={calendar}
       />
+      <ActionSection
+        action={action}
+        setAction={setAction}
+      />
     </div>
   );
 }
+
 export default Page;
