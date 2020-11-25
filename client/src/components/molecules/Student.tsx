@@ -9,14 +9,16 @@ import {StudentCheck} from '../atoms/StudentCheck'
 
 type Props = {
     student : any,
-    index : any
+    index : any,
+    data : any,
+    setData:any
 };
 export const Student = (props: Props) => {
     
 
     return (
         <div >
-            <StudentCheck student={props.student} index={props.index}></StudentCheck>
+            <StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data}></StudentCheck>
             <Name student={props.student}></Name>
             <Email student={props.student}></Email>
             <GitId student={props.student}></GitId>

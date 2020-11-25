@@ -18,7 +18,6 @@ export const CohortButton = (Props: Cohort) => {
                 )
                     .then((res) => {
                         console.log('수강생 데이텨 : ', res.data)
-                        res.data.forEach((student:any) => student.checkValue = false )                        
                         Props.setData(res.data)
                         
                         
