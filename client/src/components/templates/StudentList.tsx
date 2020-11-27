@@ -63,7 +63,7 @@ export const StudentList = (props: Props) => {
                     기수이동 페이지 입니다
                     <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>
                     {props.data.map((student:any, index:number)=>{
-                        return <MoveCohort key={index} index={index} student={student} data={props.data} setData={props.setData}></MoveCohort>
+                        return <MoveCohort key={index} index={index} student={student} data={props.data} setData={props.setData} gitCheck={props.gitCheck} slackCheck={props.slackCheck} calendar={props.calendar}></MoveCohort>
                     })}    
                 </div>:
                 <div>과제 현황 페이지 입니다</div>
