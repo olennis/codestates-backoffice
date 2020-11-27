@@ -19,9 +19,11 @@ function Page() {
   const [data, setData] = useState([])
   const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState('1');
+  
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
+
 
   return (
     <div>
@@ -38,8 +40,10 @@ function Page() {
       />
       <StudentList
         data={data}
+        setData={setData}
         setStudentData={setStudentData}
-        studentData={studentData} tab={tab}
+        studentData={studentData} 
+        tab={tab}
         gitCheck={gitCheck}
         slackCheck={slackCheck}
         calendar={calendar}

@@ -1,11 +1,11 @@
 // @flow 
 import axios from 'axios';
 import * as React from 'react';
+import { Student } from '../molecules/Student';
 type Cohort = {
     cohort: string,
     nth: string,
-    setData: any
-
+    setData: any,
 };
 export const CohortButton = (Props: Cohort) => {
     return (
@@ -17,8 +17,10 @@ export const CohortButton = (Props: Cohort) => {
 
                 )
                     .then((res) => {
-                        console.log('수강생 데이텨 : ', res)
+                        console.log('수강생 데이텨 : ', res.data)
                         Props.setData(res.data)
+                        
+                        
                     })
                     .catch((err) => { console.log(err) })
             }}>
@@ -27,3 +29,7 @@ export const CohortButton = (Props: Cohort) => {
         </span>
     );
 };
+
+
+
+
