@@ -21,7 +21,7 @@ type Props = {
 export const MoveCohort = (props: Props) => {
     return (
         <>
-             <StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data}></StudentCheck>
+            <StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data}></StudentCheck>
             <Name student={props.student}></Name>
             <Before student={props.student}></Before>
             <Present student={props.student}></Present>

@@ -13,7 +13,9 @@ type Props = {
     slackCheck: any
     setSlackCheck: any
     calendar: any
-    setCalendar: any
+    setCalendar: any,
+    data:any,
+    setData:any
 };
 
 export const ToolTab = (props: Props) => {
@@ -30,6 +32,8 @@ export const ToolTab = (props: Props) => {
                 setSlackCheck={props.setSlackCheck}
                 calendar={props.calendar}
                 setCalendar={props.setCalendar}
+                data={props.data}
+                setData={props.setData}
             />
         </Section >
     );

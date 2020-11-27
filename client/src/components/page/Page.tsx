@@ -37,6 +37,8 @@ function Page() {
         setSlackCheck={setSlackCheck}
         calendar={calendar}
         setCalendar={setCalendar}
+        data={data}
+        setData={setData}
       />
       <StudentList
         data={data}

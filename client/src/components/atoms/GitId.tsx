@@ -5,8 +5,8 @@ type Props = {
 };
 export const GitId = (props: Props) => {
     return (
-        <div>
+        <span>
             <span>{props.student.githubUserName}</span>
-        </div>
+        </span>
     );
 };

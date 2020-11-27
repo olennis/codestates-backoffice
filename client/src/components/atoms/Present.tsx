@@ -5,8 +5,8 @@ type Props = {
 };
 export const Present = (props: Props) => {
     return (
-        <div>
+        <span>
             <span>{props.student.log.split(',')[0]}</span>
-        </div>
+        </span>
     );
 };

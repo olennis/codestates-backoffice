@@ -13,7 +13,7 @@ export const CohortButton = (Props: Cohort) => {
             <button onClick={() => {
                 console.log(`${Props.cohort} ${Props.nth}기`)
                 axios.get(
-                    ` https://1b7bfc61099f.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
+                    ` https://228c719f91dc.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
 
                 )
                     .then((res) => {

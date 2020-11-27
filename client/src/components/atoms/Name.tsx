@@ -5,8 +5,8 @@ type Props = {
 };
 export const Name = (props: Props) => {
     return (
-        <div>
+        <span>
              <span>{props.student.name}</span>
-        </div>
+        </span>
     );
 };

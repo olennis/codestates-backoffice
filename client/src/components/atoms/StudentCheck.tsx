@@ -20,8 +20,8 @@ export const StudentCheck = (props: Props) => {
     
 
     return (
-        <div>
+        <span>
             <input type='checkbox' checked={props.student.checkValue || ''}  onChange={(e: any) => { chooseOne(e) }} ></input>
-        </div>
+        </span>
     );
 }

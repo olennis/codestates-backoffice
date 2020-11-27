@@ -5,8 +5,8 @@ type Props = {
 };
 export const Email = (props: Props) => {
     return (
-        <div>
+        <span>
             <span>{props.student.email}</span>
-        </div>
+        </span>
     );
 };

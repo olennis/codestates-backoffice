@@ -53,18 +53,29 @@ export const StudentList = (props: Props) => {
                 <div>
                     수강생 정보 페이지 입니다
                     <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>
-                    {props.data.map((student:any, index:number) => {
-                        return <Student key={index} index={index} student={student} data={props.data} setData={props.setData}></Student>
-                        
-                    })}
+                    {
+                        props.data
+                            .sort(function(a:any, b:any) { 
+	                            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                            })
+                            .map((student:any, index:number) => {
+                                return <Student key={index} index={index} student={student} data={props.data} setData={props.setData}></Student>  
+                            })
+                    }
                 </div> : 
                 props.tab === '2'?
                 <div>
                     기수이동 페이지 입니다
                     <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>
-                    {props.data.map((student:any, index:number)=>{
-                        return <MoveCohort key={index} index={index} student={student} data={props.data} setData={props.setData} gitCheck={props.gitCheck} slackCheck={props.slackCheck} calendar={props.calendar}></MoveCohort>
-                    })}    
+                    {
+                        props.data
+                            .sort(function(a:any, b:any) { 
+	                            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                            })
+                            .map((student:any, index:number)=>{
+                                return <MoveCohort key={index} index={index} student={student} data={props.data} setData={props.setData} gitCheck={props.gitCheck} slackCheck={props.slackCheck} calendar={props.calendar}></MoveCohort>
+                            })
+                    }    
                 </div>:
                 <div>과제 현황 페이지 입니다</div>
 
