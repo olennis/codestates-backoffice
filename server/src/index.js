@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 5000;
 const controller = require("./controllers");
+const cors = require('cors');
 app.get("/", (req, res) => {
   res.send(req.query);
 });
@@ -22,6 +23,14 @@ app.post("/slack", (req, res) => {
 app.use(parser.json());
 app.use('/tool', router);
 app.use('/test', test);
+
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    methods: ['GET', 'POST'],
+    credentials: true
+  })
+);
 
 app.set('port', port);
 app.listen(app.get('port'), () => {

@@ -5,6 +5,20 @@ const controller = require('./controllers');
 const model = require('./models');
 const { post } = require('./controllers/github/kickTeam');
 
+router.get('/getUserInfo', async(req, res) => {
+	console.log(req.query);
+	const userdata = await model.getUserByCohort.get(req.query.cohort.trim());
+	res.header("Access-Control-Allow-Origin", "*");
+	res.send(userdata);
+});
+
+router.get('/getUserByName', async(req, res) => {
+	console.log(req.query.name);
+	const userdata = await model.getUserByName.get(req.query.name.trim());
+	res.header("Access-Control-Allow-Origin", "*");
+	res.send(userdata);
+});
+
 // * POST /moveCohort
 router.post('/moveCohort', async (req, res) => {
 	console.log(req.body);
@@ -33,7 +47,7 @@ router.post('/moveCohort', async (req, res) => {
 
 
 		return personResult;
-	}))
+	}));
 
 	res.send(moveToolResults);
 	// res.send(moveToolResults);

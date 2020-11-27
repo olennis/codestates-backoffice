@@ -32,12 +32,12 @@ module.exports = {
 			console.log('kick:' + userdata.log.split(",")[1])
       console.log(from, user);
       //테스트 필요, 두 개의 채널이 배열에 있을 때 두 개 일괄적으로 처리되는지 확인 필요 -> postman 에서,,, -> 성공
-      // for(let i = 0; i < from.length; i++){
-      //   await axios({
-      //     method: "post",
-      //     url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from[i]}&user=${user}`,
-      //   });
-      // }
+      for(let i = 0; i < from.length; i++){
+        await axios({
+          method: "post",
+          url: `https://slack.com/api/conversations.kick?token=${token}&channel=${from[i]}&user=${user}`,
+        });
+      }
       return new Promise((resolve, reject) => {
         resolve(SUCCESS);
       });

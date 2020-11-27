@@ -1,12 +1,9 @@
 const { google } = require("googleapis");
-const FAIL = "calendar_invite_fail";
-const SUCCESS = "calendar_invite_success";
-const getAuth = require("./getTk");
+const getAuth = require('./getToken');
 
 module.exports = {
   get: (cohort) => {
-    const makeCohort = cohort.replace("Full", "Full Time"); // Full immersive 20기 >> Full Time immersive 20기
-    console.log(makeCohort);
+		console.log('여까지는 왔는데.')
     return new Promise((resolve, reject) => {
       getAuth.get().then((res) => {
         const calendar = google.calendar({ version: "v3", auth: res });
@@ -17,7 +14,7 @@ module.exports = {
             resolve({'message' : 'google_calendar_error'});
           }
           res.data.items.map((calendar) => {
-            if (calendar.summary === makeCohort) {
+            if (calendar.summary === cohort) {
               resolve(calendar.id);
             }
           });
