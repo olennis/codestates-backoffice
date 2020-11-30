@@ -33,17 +33,7 @@ export const StudentList = (props: Props) => {
         
     }
 
-    const sendData = () => {
-        
-        console.log(props.data,'버튼 클릭!')
-        const idArray = props.data.reduce((arr:any,student:any)=>{
-            if(student.checkValue){
-                arr.push(student.id)
-            }
-            return arr
-        },[])
-        console.log(idArray,'idArray')
-    }
+    
     
     return (
         <>
@@ -81,7 +71,7 @@ export const StudentList = (props: Props) => {
 
 
             }
-           <button onClick={()=>{sendData()}}>가자가자가자가자가자!</button>
+           
         </>
 
     );
