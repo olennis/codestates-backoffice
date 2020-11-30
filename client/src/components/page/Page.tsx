@@ -53,11 +53,21 @@ function Page() {
         calendar={calendar}
       />
       <ActionSection
+        //객체 태스트
+        cohort = {cohort}
+        nth = {nth}
+        gitCheck = {gitCheck}
+        slackCheck = {slackCheck}
+        calendar = {calendar}
+        //객체 테스트
+
         action={action}
         setAction={setAction}
+        data={data}
       />
     </div>
   );
 }
 
 export default Page;
+
