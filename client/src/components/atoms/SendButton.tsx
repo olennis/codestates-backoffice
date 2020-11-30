@@ -1,7 +1,6 @@
 // @flow 
 import React from 'react';
 import axios  from 'axios'
-import { send } from 'process';
 type Props = {
     data : any
     cohort : any
@@ -11,7 +10,6 @@ type Props = {
     calendar : any
 };
 export const SendButton = (props: Props) => {
-    
     const sendData = () => {
         
         console.log(props.data,'버튼 클릭!')
@@ -30,16 +28,15 @@ export const SendButton = (props: Props) => {
         }
         
         console.log(sendingData,'sendingData')
-
-        
         axios.post(`https://52a973cf52c1.ngrok.io/tool/moveCohort`,sendingData)
+
             .then((res)=>{
                 console.log(res,'post요청 응답')
             })
             .catch((err)=>{
                 console.log(err)
             })
-    }
+    
     return (
         <span>
             <button onClick={()=>{sendData()}}>가자가자가자가자가자!</button>
