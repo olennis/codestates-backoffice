@@ -26,19 +26,17 @@ export const SendButton = (props: Props) => {
             slack : props.slackCheck,
             calendar : props.calendar
         }
+        
         console.log(sendingData,'sendingData')
+        axios.post(`https://52a973cf52c1.ngrok.io/tool/moveCohort`,sendingData)
 
-        axios.post(
-            `https://6504244d47ae.ngrok.io/tool/moveCohort`,
-            sendingData
-            )
             .then((res)=>{
                 console.log(res,'post요청 응답')
             })
             .catch((err)=>{
                 console.log(err)
             })
-    }
+    
     return (
         <span>
             <button onClick={()=>{sendData()}}>가자가자가자가자가자!</button>
