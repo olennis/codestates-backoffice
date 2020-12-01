@@ -21,7 +21,7 @@ function Page() {
   const [data, setData] = useState([])
   const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState('1');
-  
+
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
@@ -29,16 +29,10 @@ function Page() {
 
   return (
     <div>
-      <SearchCohort 
-        cohort={cohort} 
-        setCohort={setCohort} 
-        setNth={setNth} 
-        setName={setName} 
-        name={name} 
-        nth={nth} 
-        setData={setData} ></SearchCohort>
+      <b>나는 페이지</b>
+      <SearchCohort cohort={cohort} setCohort={setCohort} setNth={setNth} setName={setName} name={name} nth={nth} setData={setData} ></SearchCohort>
       <ToolTab
-        tab = {tab}
+        tab={tab}
         setTab={setTab}
         setGitCheck={setGitCheck}
         gitCheck={gitCheck}
@@ -53,7 +47,7 @@ function Page() {
         data={data}
         setData={setData}
         setStudentData={setStudentData}
-        studentData={studentData} 
+        studentData={studentData}
         tab={tab}
         gitCheck={gitCheck}
         slackCheck={slackCheck}
@@ -61,11 +55,11 @@ function Page() {
       />
       <ActionSection
         //객체 태스트
-        cohort = {cohort}
-        nth = {nth}
-        gitCheck = {gitCheck}
-        slackCheck = {slackCheck}
-        calendar = {calendar}
+        cohort={cohort}
+        nth={nth}
+        gitCheck={gitCheck}
+        slackCheck={slackCheck}
+        calendar={calendar}
         //객체 테스트
 
         action={action}
