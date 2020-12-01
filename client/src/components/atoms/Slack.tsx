@@ -15,11 +15,11 @@ export const Slack = (props: Props) => {
         props.setData(props.data.map((student:any)=>{
             if(student.checkValue && event.target.checked){
                 student.slackcheck = true
-                console.log(student.slackcheck)
+                console.log(student.slackcheck,'☆')
             }
             else{
                 student.gitcheck = false
-                console.log(student.slackcheck)
+                console.log(student.slackcheck,'★')
             }
             return student
         }))

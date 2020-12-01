@@ -16,7 +16,6 @@ export const Tabs = (props: Props) => {
 
     return (
         <TabSection>
-            나는탭
             <StudentInfo setTab={props.setTab} />
             <ChangeCohortTab setTab={props.setTab} />
             <WorksView setTab={props.setTab} />

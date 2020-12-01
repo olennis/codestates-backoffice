@@ -14,9 +14,11 @@ export const NameButton = (Props: Name) => {
     return (
         <span>
             <button onClick={() => {
-                axios.get(
 
-                    ` https://52a973cf52c1.ngrok.io/tool/getUserByName?name=${Props.name}`
+                axios
+                .get(
+                    ` https://4154e172d00f.ngrok.io/tool/getUserByName?name=${Props.name}`
+
 
 
                 )

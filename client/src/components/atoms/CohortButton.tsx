@@ -12,9 +12,11 @@ export const CohortButton = (Props: Cohort) => {
         <span>
             <button onClick={() => {
                 console.log(`${Props.cohort} ${Props.nth}기`)
-                axios.get(
 
-                    ` https://52a973cf52c1.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
+                axios
+                .get(
+                    ` https://4154e172d00f.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
+
 
 
                 )

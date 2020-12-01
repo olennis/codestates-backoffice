@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components'
 type setName = {
     setName:React.Dispatch<React.SetStateAction<string>>
 };
@@ -13,7 +14,12 @@ export const InputName = (Props: setName) => {
     
     return (
         <span>
-            <input onChange={(e:any)=>changeName(e)} placeholder='이름을 입력해주세요'></input>
+            <Name onChange={(e:any)=>changeName(e)} placeholder='이름을 입력해주세요'></Name>
         </span>
     );
 };
+
+const Name = styled.input`
+    width:25%;
+    background: skyblue;
+`

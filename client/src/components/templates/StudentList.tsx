@@ -24,25 +24,17 @@ export const StudentList = (props: Props) => {
     
     },[])
     
-    const chooseAll = (e:any) => {
-        let checked = e.target.checked 
-        props.setData(props.data.map((student:any)=>{
-            student.checkValue = checked
-            return student
-        }))
-        
-    }
+    
 
     
     
     return (
         <>
             {
-
-                props.tab === '1'? 
+            props.tab === '1'? 
                 <div>
                     수강생 정보 페이지 입니다
-                    <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>
+                    
                     {
                         props.data
                             .sort(function(a:any, b:any) { 
@@ -53,10 +45,9 @@ export const StudentList = (props: Props) => {
                             })
                     }
                 </div> : 
-                props.tab === '2'?
+            props.tab === '2'?
                 <div>
                     기수이동 페이지 입니다
-                    <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>
                     {
                         props.data
                             .sort(function(a:any, b:any) { 

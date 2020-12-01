@@ -27,16 +27,22 @@ export const SendButton = (props: Props) => {
             calendar: props.calendar
         }
 
-        console.log(sendingData, 'sendingData')
-        axios.post(`https://52a973cf52c1.ngrok.io/tool/moveCohort`, sendingData)
+        
+        console.log(sendingData,'sendingData')
 
-            .then((res) => {
-                console.log(res, 'post요청 응답')
+        
+        axios
+        .post(
+            `https://4154e172d00f.ngrok.io/tool/moveCohort`,sendingData
+            )
+            .then((res)=>{
+                console.log(res,'post요청 응답')
+
             })
             .catch((err) => {
                 console.log(err)
             })
-    }
+        }
     return (
         <span>
             <button onClick={() => { sendData() }}>가자가자가자가자가자!</button>
