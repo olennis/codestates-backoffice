@@ -1,14 +1,20 @@
-import React from 'react';
-import View from "../atoms/View"
+// @flow 
+import * as React from 'react';
 import Pagination from "../atoms/Pagination"
+import { View } from '../atoms/View';
 
-const PageView = () => {
+type Props = {
+    view: any
+    setView: any
+};
+export const PageView = (props: Props) => {
     return (
         <div>
-            <View />
+            <View
+                view={props.view}
+                setView={props.setView}
+            />
             <Pagination />
         </div>
     );
 };
-
-export default PageView;

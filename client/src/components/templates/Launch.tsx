@@ -1,7 +1,7 @@
 // @flow 
 import * as React from 'react';
 import { ActionSection } from '../molecules/ActionSection';
-import PageView from '../molecules/PageView';
+import { PageView } from '../molecules/PageView';
 
 type Props = {
     cohort: any
@@ -12,11 +12,16 @@ type Props = {
     action: any
     setAction: any
     data: any
+    view: any
+    setView: any
 };
 export const Launch = (props: Props) => {
     return (
         <div>
-            <PageView />
+            <PageView
+                view={props.view}
+                setView={props.setView}
+            />
             <ActionSection cohort={props.cohort}
                 nth={props.nth}
                 gitCheck={props.gitCheck}

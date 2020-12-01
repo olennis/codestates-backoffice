@@ -30,16 +30,15 @@ function Page() {
 
   return (
     <div>
-      <SearchCohort 
-        cohort={cohort} 
-        setCohort={setCohort} 
-        setNth={setNth} 
-        setName={setName} 
-        name={name} 
-        nth={nth} 
+      <SearchCohort
+        cohort={cohort}
+        setCohort={setCohort}
+        setNth={setNth}
+        setName={setName}
+        name={name}
+        nth={nth}
         setData={setData} ></SearchCohort>
       <ToolTab
-
         tab={tab}
         setTab={setTab}
         setGitCheck={setGitCheck}
@@ -71,6 +70,8 @@ function Page() {
         action={action}
         setAction={setAction}
         data={data}
+        view={view}
+        setView={setView}
       />
     </div>
   );
