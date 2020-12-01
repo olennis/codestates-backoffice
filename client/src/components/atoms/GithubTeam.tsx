@@ -1,11 +1,11 @@
 // @flow 
-import React, { useEffect } from 'react'
+import React from 'react'
 
 type Props = {
     gitCheck: any
     setGitCheck: any
     data: any
-    setData:any
+    setData: any
 };
 
 // const chooseOne = (e:any) => {
@@ -20,20 +20,20 @@ type Props = {
 // }
 export const GithubTeam = (props: Props) => {
 
-    const gitmoji = (event:any) => {
+    const gitmoji = (event: any) => {
         props.setGitCheck(event.target.checked)
-        props.setData(props.data.map((student:any)=>{
-            if(student.checkValue && event.target.checked){
+        props.setData(props.data.map((student: any) => {
+            if (student.checkValue && event.target.checked) {
                 student.gitcheck = true
                 console.log(student.gitcheck)
             }
-            else{
+            else {
                 student.gitcheck = false
                 console.log(student.gitcheck)
             }
             return student
         }))
-        
+
     }
 
     return (
