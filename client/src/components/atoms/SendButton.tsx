@@ -1,7 +1,6 @@
 // @flow 
 import React from 'react';
 import axios  from 'axios'
-import { send } from 'process';
 type Props = {
     data : any
     cohort : any
@@ -11,7 +10,6 @@ type Props = {
     calendar : any
 };
 export const SendButton = (props: Props) => {
-    
     const sendData = () => {
         
         console.log(props.data,'버튼 클릭!')
@@ -42,7 +40,7 @@ export const SendButton = (props: Props) => {
             .catch((err)=>{
                 console.log(err)
             })
-    }
+        }
     return (
         <span>
             <button onClick={()=>{sendData()}}>가자가자가자가자가자!</button>

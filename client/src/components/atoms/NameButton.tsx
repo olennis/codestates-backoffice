@@ -18,6 +18,7 @@ export const NameButton = (Props: Name) => {
                 .get(
                     ` https://4154e172d00f.ngrok.io/tool/getUserByName?name=${Props.name}`
 
+
                 )
                     .then((res) => {
                         console.log(res)

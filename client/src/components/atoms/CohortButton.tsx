@@ -16,6 +16,7 @@ export const CohortButton = (Props: Cohort) => {
                 .get(
                     ` https://4154e172d00f.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
 
+
                 )
                     .then((res) => {
                         console.log('수강생 데이텨 : ', res.data)
