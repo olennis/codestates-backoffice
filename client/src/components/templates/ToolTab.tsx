@@ -15,16 +15,20 @@ type Props = {
     calendar: any
     setCalendar: any,
     data:any,
-    setData:any
+    setData:any,
+    tab : any,
+    
 };
 
 export const ToolTab = (props: Props) => {
 
     return (
         <Section>
-            여긴 탬플릿
             <Tabs setTab={props.setTab} />
-            <StateBar />
+            <StateBar 
+                tab={props.tab} 
+                data={props.data} 
+                setData={props.setData}/>
             <CheckToolBar
                 gitCheck={props.gitCheck}
                 setGitCheck={props.setGitCheck}

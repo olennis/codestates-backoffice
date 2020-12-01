@@ -32,7 +32,10 @@ export const SendButton = (props: Props) => {
         console.log(sendingData,'sendingData')
 
         
-        axios.post(`https://52a973cf52c1.ngrok.io/tool/moveCohort`,sendingData)
+        axios
+        .post(
+            `https://4154e172d00f.ngrok.io/tool/moveCohort`,sendingData
+            )
             .then((res)=>{
                 console.log(res,'post요청 응답')
             })
