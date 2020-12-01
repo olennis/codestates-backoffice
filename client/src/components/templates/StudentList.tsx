@@ -8,8 +8,8 @@ interface Props {
     setStudentData:Function,
     studentData:Array<[]>,
     tab:string,
-    gitCheck:any,
     setData:Function,
+    gitCheck:any,
     slackCheck: any,
     calendar: any
 };
@@ -41,7 +41,15 @@ export const StudentList = (props: Props) => {
 	                            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                             })
                             .map((student:any, index:number) => {
-                                return <Student key={index} index={index} student={student} data={props.data} setData={props.setData}></Student>  
+                                return <Student 
+                                            key={index} 
+                                            index={index} 
+                                            student={student} 
+                                            data={props.data} 
+                                            setData={props.setData}
+                                            gitCheck={props.gitCheck}
+                                            slackCheck={props.slackCheck}
+                                            calendar={props.calendar}></Student>  
                             })
                     }
                 </div> : 

@@ -20,7 +20,7 @@ export const StateBar = (props: Props) => {
         
     }
 
-
+    
     return (
         <StateSection>
             <input type='checkbox' onChange={(e:any)=>{chooseAll(e)}} ></input>

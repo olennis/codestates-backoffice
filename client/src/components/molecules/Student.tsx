@@ -12,6 +12,9 @@ type Props = {
     index : any,
     data : any,
     setData:any
+    gitCheck:any,
+    slackCheck: any,
+    calendar: any
 };
 export const Student = (props: Props) => {
     
@@ -24,6 +27,21 @@ export const Student = (props: Props) => {
             <GitId student={props.student}></GitId>
             <Before student={props.student}></Before>
             <Present student={props.student}></Present>
+            {
+            props.student.checkValue && props.gitCheck?
+                <span>🙆🏻‍♂️</span>:
+                <span>🙅🏻‍♀️</span>
+            }
+            {
+            props.student.checkValue && props.slackCheck?
+                <span>🙆🏻‍♂️</span>:
+                <span>🙅🏻‍♀️</span>
+            }
+            {
+            props.student.checkValue && props.calendar?
+                <span>🙆🏻‍♂️</span>:
+                <span>🙅🏻‍♀️</span>
+            }
         </div>
     );
 };
