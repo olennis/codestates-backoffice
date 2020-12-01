@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { SearchCohort } from '../templates/SearchCohort'
 import { ToolTab } from '../templates/ToolTab'
 import { StudentList } from '../templates/StudentList'
-import { ActionSection } from '../templates/ActionSection';
+import { Launch } from "../templates/Launch"
 
 // type Checkbok = {
 //   check: boolean
@@ -16,6 +16,7 @@ import { ActionSection } from '../templates/ActionSection';
 function Page() {
   const [cohort, setCohort] = useState('')
   const [action, setAction] = useState('')
+  const [view, setView] = useState('') //* 보기에 대한 토글
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
@@ -60,15 +61,13 @@ function Page() {
         slackCheck={slackCheck}
         calendar={calendar}
       />
-      <ActionSection
+      <Launch
         //객체 태스트
         cohort={cohort}
         nth={nth}
         gitCheck={gitCheck}
         slackCheck={slackCheck}
         calendar={calendar}
-        //객체 테스트
-
         action={action}
         setAction={setAction}
         data={data}
