@@ -29,9 +29,16 @@ function Page() {
 
   return (
     <div>
-      <b>나는 페이지</b>
-      <SearchCohort cohort={cohort} setCohort={setCohort} setNth={setNth} setName={setName} name={name} nth={nth} setData={setData} ></SearchCohort>
+      <SearchCohort 
+        cohort={cohort} 
+        setCohort={setCohort} 
+        setNth={setNth} 
+        setName={setName} 
+        name={name} 
+        nth={nth} 
+        setData={setData} ></SearchCohort>
       <ToolTab
+
         tab={tab}
         setTab={setTab}
         setGitCheck={setGitCheck}
