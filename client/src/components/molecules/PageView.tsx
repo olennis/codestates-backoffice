@@ -1,11 +1,14 @@
 // @flow 
 import * as React from 'react';
-import Pagination from "../atoms/Pagination"
+import { PageMove } from "../atoms/PageMove"
 import { View } from '../atoms/View';
 
 type Props = {
     view: any
     setView: any
+    currentPage: any
+    setCurrentPage: any
+    data: any
 };
 export const PageView = (props: Props) => {
     return (
@@ -14,7 +17,11 @@ export const PageView = (props: Props) => {
                 view={props.view}
                 setView={props.setView}
             />
-            <Pagination />
+            <PageMove
+                data={props.data}
+                currentPage={props.currentPage}
+                setCurrentPage={props.setCurrentPage}
+            />
         </div>
     );
 };

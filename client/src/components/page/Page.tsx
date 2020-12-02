@@ -17,6 +17,8 @@ function Page() {
   const [cohort, setCohort] = useState('')
   const [action, setAction] = useState('')
   const [view, setView] = useState('') //* 보기에 대한 토글
+  const [currentPage, setCurrentPage] = useState('') //* 페이지네이션
+
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
@@ -72,6 +74,8 @@ function Page() {
         data={data}
         view={view}
         setView={setView}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );

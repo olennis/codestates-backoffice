@@ -3,6 +3,7 @@ import * as React from 'react';
 import { ActionSection } from '../molecules/ActionSection';
 import { PageView } from '../molecules/PageView';
 
+
 type Props = {
     cohort: any
     nth: any
@@ -14,6 +15,8 @@ type Props = {
     data: any
     view: any
     setView: any
+    currentPage: any
+    setCurrentPage: any
 };
 export const Launch = (props: Props) => {
     return (
@@ -21,6 +24,9 @@ export const Launch = (props: Props) => {
             <PageView
                 view={props.view}
                 setView={props.setView}
+                currentPage={props.currentPage}
+                setCurrentPage={props.setCurrentPage}
+                data={props.data}
             />
             <ActionSection cohort={props.cohort}
                 nth={props.nth}
