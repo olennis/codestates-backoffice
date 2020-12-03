@@ -7,13 +7,12 @@ type Props = {
     action: any
     setAction: any
     data : any
-    //객체 테스트
     cohort : any
     nth : any
     gitCheck : any
     slackCheck : any
     calendar : any
-    //객체 테스트
+    setData : any
 };
 
 export const ActionSection = (props: Props) => {
@@ -29,6 +28,8 @@ export const ActionSection = (props: Props) => {
             gitCheck = {props.gitCheck}
             slackCheck = {props.slackCheck}
             calendar = {props.calendar}
+            action = {props.action}
+            setData = {props.setData}
             />
         </div>
     );
