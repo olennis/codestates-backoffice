@@ -49,7 +49,8 @@ export const StudentList = (props: Props) => {
                                             setData={props.setData}
                                             gitCheck={props.gitCheck}
                                             slackCheck={props.slackCheck}
-                                            calendar={props.calendar}></Student>  
+                                            calendar={props.calendar}
+                                            ></Student>  
                             })
                     }
                 </div> : 
@@ -62,7 +63,16 @@ export const StudentList = (props: Props) => {
 	                            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                             })
                             .map((student:any, index:number)=>{
-                                return <MoveCohort key={index} index={index} student={student} data={props.data} setData={props.setData} gitCheck={props.gitCheck} slackCheck={props.slackCheck} calendar={props.calendar}></MoveCohort>
+                                return <MoveCohort 
+                                key={index} 
+                                            index={index} 
+                                            student={student} 
+                                            data={props.data} 
+                                            setData={props.setData}
+                                            gitCheck={props.gitCheck}
+                                            slackCheck={props.slackCheck}
+                                            calendar={props.calendar}
+                                            ></MoveCohort>
                             })
                     }    
                 </div>:

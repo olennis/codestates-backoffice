@@ -13,14 +13,18 @@ type Props = {
     action: any
     setAction: any
     data: any
+
+    setData :any
     view: any
     setView: any
     currentPage: any
     setCurrentPage: any
+
 };
 export const Launch = (props: Props) => {
     return (
         <div>
+
             <PageView
                 view={props.view}
                 setView={props.setView}
@@ -36,6 +40,7 @@ export const Launch = (props: Props) => {
                 action={props.action}
                 setAction={props.setAction}
                 data={props.data}
+                setData = {props.setData}
             />
         </div>
     );

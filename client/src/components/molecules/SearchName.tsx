@@ -15,6 +15,7 @@ export const SearchName = (props:Props) => {
         <div>
             <InputName setName={props.setName}></InputName>
             <NameButton name={props.name} setData={props.setData}></NameButton>
+            <span>김동훈</span><span> 복사해서 쓰세요</span>
         </div>
     );
 };

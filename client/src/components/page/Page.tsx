@@ -24,7 +24,6 @@ function Page() {
   const [data, setData] = useState([])
   const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState('1');
-
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
@@ -61,6 +60,7 @@ function Page() {
         gitCheck={gitCheck}
         slackCheck={slackCheck}
         calendar={calendar}
+        
       />
       <Launch
         //객체 태스트
@@ -72,6 +72,7 @@ function Page() {
         action={action}
         setAction={setAction}
         data={data}
+        setData={setData}
         view={view}
         setView={setView}
         currentPage={currentPage}

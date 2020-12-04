@@ -10,8 +10,8 @@ type setCohort = {
 
 export const SelectCohort = (Props:setCohort) => {
     
-    const changeCohort = async (e:any) => {
-        await Props.setCohort(e.target.value)
+    const changeCohort = (e:any) => {
+        Props.setCohort(e.target.value)
         
     }
     console.log('cohort:',Props.cohort)
