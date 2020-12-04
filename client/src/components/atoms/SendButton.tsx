@@ -30,7 +30,7 @@ export const SendButton = (props: Props) => {
             calendar: props.calendar
         }
 
-        
+
         console.log(sendingData,'sendingData')
         if(props.action === '1'){
             console.log('탑승 API 실행')
@@ -84,8 +84,6 @@ export const SendButton = (props: Props) => {
         else{
             console.log('made by COE')
         }
-        
-        
     }
     return (
         <span>

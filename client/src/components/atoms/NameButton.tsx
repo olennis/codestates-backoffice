@@ -16,12 +16,10 @@ export const NameButton = (Props: Name) => {
             <button onClick={() => {
 
                 axios
-                .get(
-                    ` https://34bdc142dd6f.ngrok.io/tool/getUserByName?name=${Props.name}`
+                    .get(
+                        ` https://34bdc142dd6f.ngrok.io/tool/getUserByName?name=${Props.name}`
 
-
-
-                )
+                    )
                     .then((res) => {
                         console.log(res)
                         Props.setData(res.data)

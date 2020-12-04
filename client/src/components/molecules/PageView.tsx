@@ -9,6 +9,10 @@ type Props = {
     currentPage: any
     setCurrentPage: any
     data: any
+    setData: any
+    setPageNum: any
+    splitData: any
+    setSplitData: any
 };
 export const PageView = (props: Props) => {
     return (
@@ -18,9 +22,14 @@ export const PageView = (props: Props) => {
                 setView={props.setView}
             />
             <PageMove
+                view={props.view}
                 data={props.data}
+                setData={props.setData}
                 currentPage={props.currentPage}
                 setCurrentPage={props.setCurrentPage}
+                setPageNum={props.setPageNum}
+                splitData={props.splitData}
+                setSplitData={props.setSplitData}
             />
         </div>
     );

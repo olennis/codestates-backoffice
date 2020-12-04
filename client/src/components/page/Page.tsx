@@ -16,18 +16,19 @@ import { Launch } from "../templates/Launch"
 function Page() {
   const [cohort, setCohort] = useState('')
   const [action, setAction] = useState('')
-  const [view, setView] = useState('') //* 보기에 대한 토글
+  const [view, setView] = useState('1') //* 보기에 대한 토글
   const [currentPage, setCurrentPage] = useState('') //* 페이지네이션
 
   const [nth, setNth] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState([])
+  const [splitData, setSplitData] = useState([]) //* 보기토글대로 나눠진 데이터숫자상태
+  const [pageNum, setPageNum] = useState('') //* 페이지 숫자상태
   const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState('1');
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
-
 
   return (
     <div>
@@ -60,7 +61,9 @@ function Page() {
         gitCheck={gitCheck}
         slackCheck={slackCheck}
         calendar={calendar}
-        
+        splitData={splitData}
+        pageNum={pageNum}
+        view={view}
       />
       <Launch
         //객체 태스트
@@ -77,8 +80,11 @@ function Page() {
         setView={setView}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        splitData={splitData}
+        setSplitData={setSplitData}
+        setPageNum={setPageNum}
       />
-    </div>
+    </div >
   );
 }
 

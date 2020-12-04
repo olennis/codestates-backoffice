@@ -10,18 +10,18 @@ import {StudentCheck} from '../atoms/StudentCheck'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 
-
 type Props = {
-    student : any,
-    index : any,
-    data : any,
-    setData:any
-    gitCheck:any,
+    student: any,
+    index: any,
+    data: any,
+    setData: any
+    gitCheck: any,
     slackCheck: any,
     calendar: any,
     
 };
 export const Student = (props: Props) => {
+
     const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -42,6 +42,7 @@ export const Student = (props: Props) => {
             <Before student={props.student}></Before>
             <Present student={props.student}></Present>
             {
+
                 props.student.checkValue && props.gitCheck?
                     <span>🙆🏻‍♂️</span>:
                     <span>🙅🏻‍♀️</span>

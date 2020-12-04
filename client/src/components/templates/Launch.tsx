@@ -13,13 +13,14 @@ type Props = {
     action: any
     setAction: any
     data: any
-
-    setData :any
+    setData: any
     view: any
     setView: any
     currentPage: any
     setCurrentPage: any
-
+    splitData: any
+    setSplitData: any
+    setPageNum: any
 };
 export const Launch = (props: Props) => {
     return (
@@ -31,6 +32,10 @@ export const Launch = (props: Props) => {
                 currentPage={props.currentPage}
                 setCurrentPage={props.setCurrentPage}
                 data={props.data}
+                setData={props.setData}
+                splitData={props.splitData}
+                setSplitData={props.setSplitData}
+                setPageNum={props.setPageNum}
             />
             <ActionSection cohort={props.cohort}
                 nth={props.nth}
