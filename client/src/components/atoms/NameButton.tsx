@@ -22,7 +22,7 @@ export const NameButton = (Props: Name) => {
                     )
                     .then((res) => {
                         console.log(res)
-                        Props.setData(res.data.uers)
+                        Props.setData(res.data.users)
                     })
                     .catch((err) => { console.log(err) })
             }}>이름 찾기!</button>

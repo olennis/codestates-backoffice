@@ -24,7 +24,6 @@ export const SendButton = (props: Props) => {
         }, [])
         const sendingData = {
             people: people,
-            cohort: `${props.cohort} ${props.nth}기`,
             github: props.gitCheck,
             slack: props.slackCheck,
             calendar: props.calendar
@@ -39,7 +38,7 @@ export const SendButton = (props: Props) => {
 
             axios
                 .post(
-                    `https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/moveTools`, sendingData
+                    `https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/moveTools`, sendingData,
                 )
                 .then((res) => {
                     //1. res.data 받아옴 >> [{name:[1,2,3,4,5,6]}]
@@ -57,7 +56,6 @@ export const SendButton = (props: Props) => {
                                                     successValue = false
                                                 }
                                                 else {
-                                                    console.log('뭐여시벌')
                                                     successValue = true
                                                 }
                                             }
@@ -84,6 +82,8 @@ export const SendButton = (props: Props) => {
         else {
             console.log('made by COE')
         }
+
+
     }
     return (
         <span>
