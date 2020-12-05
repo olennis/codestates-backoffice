@@ -17,12 +17,12 @@ export const NameButton = (Props: Name) => {
 
                 axios
                     .get(
-                        ` https://34bdc142dd6f.ngrok.io/tool/getUserByName?name=${Props.name}`
+                        ` https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/getUsersByName?name=${Props.name}`
 
                     )
                     .then((res) => {
                         console.log(res)
-                        Props.setData(res.data)
+                        Props.setData(res.data.uers)
                     })
                     .catch((err) => { console.log(err) })
             }}>이름 찾기!</button>

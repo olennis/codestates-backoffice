@@ -22,7 +22,15 @@ export const StudentList = (props: Props) => {
         // let checkData = props.data
         props.setData(
             props.data.map((student: any) => {
-                return { 'checkValue': false, name: student.name, email: student.email, githubUserName: student.githubUserName, log: student.log, id: student.id, googleId: student.googleId }
+                return {
+                    'checkValue': false,
+                    name: student.name,
+                    email: student.email,
+                    githubUserName: student.githubUserName,
+                    log: student.log,
+                    id: student.id,
+                    googleId: student.googleId
+                }
             }))
 
     }, [])
@@ -60,7 +68,8 @@ export const StudentList = (props: Props) => {
                                 {
                                     // console.log(props.splitData.map((data: any) => { return data[0] }))
                                     props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
-                                        return data[Number(props.view) - 1].sort(function (a: any, b: any) {
+                                        console.log(data[Number(props.pageNum) - 1])
+                                        return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
                                             return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                                         }).map((student: any, index: number) => {
                                             return <Student
@@ -78,7 +87,55 @@ export const StudentList = (props: Props) => {
 
                                 }
                             </div>
-                            : console.log('check')
+                            : props.view === '10'
+                                ? <div>
+                                    {console.log(props.splitData)}
+                                    {
+                                        // console.log(props.splitData.map((data: any) => { return data[0] }))
+                                        props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
+                                            console.log(data[Number(props.pageNum) - 1])
+                                            return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
+                                                return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                                            }).map((student: any, index: number) => {
+                                                return <Student
+                                                    key={index}
+                                                    index={index}
+                                                    student={student}
+                                                    data={props.data}
+                                                    setData={props.setData}
+                                                    gitCheck={props.gitCheck}
+                                                    slackCheck={props.slackCheck}
+                                                    calendar={props.calendar}
+                                                />
+                                            })
+                                        })
+
+                                    }
+                                </div>
+                                : props.view === '30'
+                                    ? <div>
+                                        {console.log(props.splitData)}
+                                        {
+                                            // console.log(props.splitData.map((data: any) => { return data[0] }))
+                                            props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
+                                                console.log(data[Number(props.pageNum) - 1])
+                                                return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
+                                                    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                                                }).map((student: any, index: number) => {
+                                                    return <Student
+                                                        key={index}
+                                                        index={index}
+                                                        student={student}
+                                                        data={props.data}
+                                                        setData={props.setData}
+                                                        gitCheck={props.gitCheck}
+                                                        slackCheck={props.slackCheck}
+                                                        calendar={props.calendar}
+                                                    />
+                                                })
+                                            })
+                                        }
+                                    </div> : <div>까꿍</div>
                     :
                     props.tab === '2' ?
                         <div>
@@ -89,7 +146,18 @@ export const StudentList = (props: Props) => {
                                         return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                                     })
                                     .map((student: any, index: number) => {
-                                        return <MoveCohort key={index} index={index} student={student} data={props.data} setData={props.setData} gitCheck={props.gitCheck} slackCheck={props.slackCheck} calendar={props.calendar} />
+                                        return (
+                                            <MoveCohort
+                                                key={index}
+                                                index={index}
+                                                student={student}
+                                                data={props.data}
+                                                setData={props.setData}
+                                                gitCheck={props.gitCheck}
+                                                slackCheck={props.slackCheck}
+                                                calendar={props.calendar}
+                                            />
+                                        )
                                     })
                             }
                         </div> :

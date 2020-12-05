@@ -23,7 +23,7 @@ function Page() {
   const [name, setName] = useState('')
   const [data, setData] = useState([])
   const [splitData, setSplitData] = useState([]) //* 보기토글대로 나눠진 데이터숫자상태
-  const [pageNum, setPageNum] = useState('') //* 페이지 숫자상태
+  const [pageNum, setPageNum] = useState('1') //* 페이지 숫자상태
   const [studentData, setStudentData] = useState([])
   const [tab, setTab] = useState('1');
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리

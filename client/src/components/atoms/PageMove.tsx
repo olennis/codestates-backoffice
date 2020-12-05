@@ -41,10 +41,8 @@ export const PageMove = (props: Props) => {
 
     return (
         props.view === '1'
-            ? <Pagination count={props.data.length / props.data.length} />
-            :
-            // <Pagination count={props.data.length / Math.ceil(props.view)} />
-            <Pagination onClick={(event: any) => props.setPageNum(event.target.innerText)} count={Math.ceil(props.data.length / props.view)} />
+            ? <Pagination count={props.data.length / props.data.length} variant="outlined" shape="rounded" />
+            : <Pagination onClick={(event: any) => props.setPageNum(event.target.innerText)} count={Math.ceil(props.data.length / props.view)} variant="outlined" shape="rounded" />
     )
 
 };

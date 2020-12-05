@@ -15,13 +15,13 @@ export const CohortButton = (Props: Cohort) => {
 
                 axios
                     .get(
-                        ` https://34bdc142dd6f.ngrok.io/tool/getUserInfo?cohort=${Props.cohort} ${Props.nth}기`
+                        ` https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/getUsersByCohort?cohort=${Props.cohort} ${Props.nth}기`
 
-              
+
                     )
                     .then((res) => {
                         console.log('수강생 데이텨 : ', res.data)
-                        Props.setData(res.data)
+                        Props.setData(res.data.users)
 
 
                     })
