@@ -16,8 +16,11 @@ interface Props {
     pageNum: any
     splitData: any
     view: any
+    checkNum: any
+    setCheckNum: any
 };
 export const StudentList = (props: Props) => {
+    // console.log(props.data, '!!!!!!!')
     useEffect(() => {
         // let checkData = props.data
         props.setData(
@@ -57,6 +60,9 @@ export const StudentList = (props: Props) => {
                                             gitCheck={props.gitCheck}
                                             slackCheck={props.slackCheck}
                                             calendar={props.calendar}
+                                            checkNum={props.checkNum}
+                                            setCheckNum={props.setCheckNum}
+
                                         />
 
                                     })
@@ -81,6 +87,9 @@ export const StudentList = (props: Props) => {
                                                 gitCheck={props.gitCheck}
                                                 slackCheck={props.slackCheck}
                                                 calendar={props.calendar}
+                                                checkNum={props.checkNum}
+                                                setCheckNum={props.setCheckNum}
+
                                             />
                                         })
                                     })
@@ -106,6 +115,9 @@ export const StudentList = (props: Props) => {
                                                     gitCheck={props.gitCheck}
                                                     slackCheck={props.slackCheck}
                                                     calendar={props.calendar}
+                                                    checkNum={props.checkNum}
+                                                    setCheckNum={props.setCheckNum}
+
                                                 />
                                             })
                                         })
@@ -131,6 +143,9 @@ export const StudentList = (props: Props) => {
                                                         gitCheck={props.gitCheck}
                                                         slackCheck={props.slackCheck}
                                                         calendar={props.calendar}
+                                                        checkNum={props.checkNum}
+                                                        setCheckNum={props.setCheckNum}
+
                                                     />
                                                 })
                                             })
@@ -138,16 +153,16 @@ export const StudentList = (props: Props) => {
                                     </div> : <div>까꿍</div>
                     :
                     props.tab === '2' ?
-                        <div>
-                            기수이동 페이지 입니다
-                    {
-                                props.data
-                                    .sort(function (a: any, b: any) {
-                                        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-                                    })
-                                    .map((student: any, index: number) => {
-                                        return (
-                                            <MoveCohort
+                        props.view === '1'
+                            ?
+                            <div>
+                                {
+                                    props.data
+                                        .sort(function (a: any, b: any) {
+                                            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                                        })
+                                        .map((student: any, index: number) => {
+                                            return <MoveCohort
                                                 key={index}
                                                 index={index}
                                                 student={student}
@@ -156,18 +171,100 @@ export const StudentList = (props: Props) => {
                                                 gitCheck={props.gitCheck}
                                                 slackCheck={props.slackCheck}
                                                 calendar={props.calendar}
+                                                checkNum={props.checkNum}
+                                                setCheckNum={props.setCheckNum}
+
                                             />
-                                        )
-                                    })
-                            }
-                        </div> :
+
+                                        })
+                                }
+                            </div>
+                            : props.view === '5'
+                                ? <div>
+                                    {console.log(props.splitData)}
+                                    {
+                                        // console.log(props.splitData.map((data: any) => { return data[0] }))
+                                        props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
+                                            console.log(data[Number(props.pageNum) - 1])
+                                            return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
+                                                return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                                            }).map((student: any, index: number) => {
+                                                return <MoveCohort
+                                                    key={index}
+                                                    index={index}
+                                                    student={student}
+                                                    data={props.data}
+                                                    setData={props.setData}
+                                                    gitCheck={props.gitCheck}
+                                                    slackCheck={props.slackCheck}
+                                                    calendar={props.calendar}
+                                                    checkNum={props.checkNum}
+                                                    setCheckNum={props.setCheckNum}
+
+                                                />
+                                            })
+                                        })
+
+                                    }
+                                </div>
+                                : props.view === '10'
+                                    ? <div>
+                                        {console.log(props.splitData)}
+                                        {
+                                            // console.log(props.splitData.map((data: any) => { return data[0] }))
+                                            props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
+                                                console.log(data[Number(props.pageNum) - 1])
+                                                return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
+                                                    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                                                }).map((student: any, index: number) => {
+                                                    return <MoveCohort
+                                                        key={index}
+                                                        index={index}
+                                                        student={student}
+                                                        data={props.data}
+                                                        setData={props.setData}
+                                                        gitCheck={props.gitCheck}
+                                                        slackCheck={props.slackCheck}
+                                                        calendar={props.calendar}
+                                                        checkNum={props.checkNum}
+                                                        setCheckNum={props.setCheckNum}
+
+                                                    />
+                                                })
+                                            })
+
+                                        }
+                                    </div>
+                                    : props.view === '30'
+                                        ? <div>
+                                            {console.log(props.splitData)}
+                                            {
+                                                // console.log(props.splitData.map((data: any) => { return data[0] }))
+                                                props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
+                                                    console.log(data[Number(props.pageNum) - 1])
+                                                    return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
+                                                        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+                                                    }).map((student: any, index: number) => {
+                                                        return <MoveCohort
+                                                            key={index}
+                                                            index={index}
+                                                            student={student}
+                                                            data={props.data}
+                                                            setData={props.setData}
+                                                            gitCheck={props.gitCheck}
+                                                            slackCheck={props.slackCheck}
+                                                            calendar={props.calendar}
+                                                            checkNum={props.checkNum}
+                                                            setCheckNum={props.setCheckNum}
+
+                                                        />
+                                                    })
+                                                })
+                                            }
+                                        </div> : <div>까꿍</div> :
                         <div>과제 현황 페이지 입니다</div>
-
-
             }
-
         </>
-
     );
 };
 

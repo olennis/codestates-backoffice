@@ -29,6 +29,8 @@ function Page() {
   const [gitCheck, setGitCheck] = useState(false) // * 깃헙팀 체크박스 상태관리
   const [slackCheck, setSlackCheck] = useState(false) // * 슬랙팀 체크박스 상태관리
   const [calendar, setCalendar] = useState(false) // * 캘린더 체크박스 상태관리
+  const [checkNum, setCheckNum] = useState(0)
+
 
   return (
     <div>
@@ -51,6 +53,8 @@ function Page() {
         setCalendar={setCalendar}
         data={data}
         setData={setData}
+        checkNum={checkNum}
+        setCheckNum={setCheckNum}
       />
       <StudentList
         data={data}
@@ -64,6 +68,8 @@ function Page() {
         splitData={splitData}
         pageNum={pageNum}
         view={view}
+        checkNum={checkNum}
+        setCheckNum={setCheckNum}
       />
       <Launch
         //객체 태스트
@@ -82,7 +88,9 @@ function Page() {
         setCurrentPage={setCurrentPage}
         splitData={splitData}
         setSplitData={setSplitData}
+        pageNum={pageNum}
         setPageNum={setPageNum}
+        checkNum={checkNum}
       />
     </div >
   );

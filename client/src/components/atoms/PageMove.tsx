@@ -1,6 +1,8 @@
 // @flow 
 import React, { useEffect } from 'react'
 import { Pagination } from '@material-ui/lab';
+import { LeftButton } from './LeftButton';
+import { RightButton } from './RightButton';
 
 
 type Props = {
@@ -9,6 +11,7 @@ type Props = {
     data: any
     setData: any
     view: any
+    pageNum: any
     setPageNum: any
     splitData: any
     setSplitData: any
@@ -40,9 +43,17 @@ export const PageMove = (props: Props) => {
     }, [props.view])
 
     return (
-        props.view === '1'
-            ? <Pagination count={props.data.length / props.data.length} variant="outlined" shape="rounded" />
-            : <Pagination onClick={(event: any) => props.setPageNum(event.target.innerText)} count={Math.ceil(props.data.length / props.view)} variant="outlined" shape="rounded" />
+        <div>
+            {
+                props.view === '1'
+                    ? <Pagination count={props.data.length / props.data.length} variant="outlined" shape="rounded" />
+                    : <Pagination onClick={(event: any) => {
+                        console.log(event.target, '???????')
+                        props.setPageNum(event.target.innerText)
+                    }} count={Math.ceil(props.data.length / props.view)} variant="outlined" shape="rounded" />
+            }
+
+        </div>
     )
 
 };
