@@ -5,8 +5,6 @@ import Page from './components/page/Page';
 ReactDOM.render(
   <div>
     <Page />
-  </div>
-  
-  ,
+  </div>,
   document.getElementById('root')
 );

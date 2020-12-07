@@ -1,21 +1,20 @@
 // @flow 
-import React ,{useState} from 'react';
-import {InputName} from '../atoms/InputName'
-import {NameButton} from '../atoms/NameButton'
+import React, { useState } from 'react';
+import { InputName } from '../atoms/InputName'
+import { NameButton } from '../atoms/NameButton'
 
 type Props = {
-    setName:any,
-    setData:any,
-    name:string
- };
+    setName: any,
+    setData: any,
+    name: string
+};
 
-export const SearchName = (props:Props) => {
-    
+export const SearchName = (props: Props) => {
+
     return (
         <div>
             <InputName setName={props.setName}></InputName>
             <NameButton name={props.name} setData={props.setData}></NameButton>
-            <span>김동훈</span><span> 복사해서 쓰세요</span>
         </div>
     );
 };

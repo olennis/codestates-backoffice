@@ -24,16 +24,19 @@ type Props = {
 export const Student = (props: Props) => {
 
     return (
-        <div >
-            <StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
-                setCheckNum={props.setCheckNum}></StudentCheck>
-            <Name student={props.student}></Name>
-            <Email student={props.student}></Email>
-            <GitId student={props.student}></GitId>
-            <Before student={props.student}></Before>
-            <Present student={props.student}></Present>
 
-        </div>
+        <tr style={{ border: "1px solid" }}>
+            <td style={{ border: "1px solid", padding: '4px' }}>
+                <StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
+                    setCheckNum={props.setCheckNum}></StudentCheck>
+            </td>
+            <td style={{ border: "1px solid", padding: '4px' }}><Name student={props.student}></Name></td>
+            <td style={{ border: "1px solid", padding: '4px' }}><Email student={props.student}></Email></td>
+            <td style={{ border: "1px solid", padding: '4px' }}><GitId student={props.student}></GitId></td>
+            <td style={{ border: "1px solid", padding: '4px' }}><Before student={props.student}></Before></td>
+            <td style={{ border: "1px solid", padding: '4px' }}><Present student={props.student}></Present></td>
+        </tr >
+
     );
 };
 

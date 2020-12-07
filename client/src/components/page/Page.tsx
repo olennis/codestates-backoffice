@@ -6,12 +6,6 @@ import { ToolTab } from '../templates/ToolTab'
 import { StudentList } from '../templates/StudentList'
 import { Launch } from "../templates/Launch"
 
-// type Checkbok = {
-//   check: boolean
-// }
-// const defaultCheck: Checkbok = {
-//   check: false
-// }
 
 function Page() {
   const [cohort, setCohort] = useState('')
@@ -41,7 +35,8 @@ function Page() {
         setName={setName}
         name={name}
         nth={nth}
-        setData={setData} ></SearchCohort>
+        setData={setData}
+      />
       <ToolTab
         tab={tab}
         setTab={setTab}

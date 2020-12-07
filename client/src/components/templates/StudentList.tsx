@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Student } from '../molecules/Student'
 import { MoveCohort } from '../molecules/MoveCohort'
+import { Table } from "antd"
 
 
 interface Props {
