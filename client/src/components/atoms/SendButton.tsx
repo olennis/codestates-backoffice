@@ -41,36 +41,15 @@ export const SendButton = (props: Props) => {
                     `https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/moveTools`, sendingData,
                 )
                 .then((res) => {
-                    //1. res.data 받아옴 >> [{name:[1,2,3,4,5,6]}]
-
-                    props.setData(
-                        props.data.map((student: any) => {
-                            let successValue;
-                            for (let i = 0; i < res.data.length; i += 1) {
-                                for (let key in res.data[i]) {
-                                    if (key === student.name) {
-                                        if (res.data[i][key]) {//.split('_').includes('fail')
-                                            for (let j = 0; j < res.data[i][key].length; j += 1) {
-                                                if (res.data[i][key][j].split('_').includes('fail')) {
-                                                    console.log(j, res.data[i][key][j].split('_'))
-                                                    successValue = false
-                                                }
-                                                else {
-                                                    successValue = true
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                    console.log(res.data)
+                    props.setData(props.data.map((student: any) => {
+                        for (let i = 0; i < res.data.results.length; i += 1) {
+                            if (res.data.results[i].user.name === student.name) {
+                                student.result = res.data.results[i].result
                             }
-                            return { 'successValue': successValue, name: student.name, email: student.email, githubUserName: student.githubUserName, log: student.log, id: student.id, googleId: student.googleId }
-                        }))
-
-
-
-                    console.log(props.data, 'data check')
-
-
+                        }
+                        return student
+                    }))
                 })
                 .catch((err) => {
                     console.log(err)

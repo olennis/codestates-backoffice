@@ -14,10 +14,11 @@ type Props = {
     setSlackCheck: any
     calendar: any
     setCalendar: any,
-    data:any,
-    setData:any,
-    tab : any,
-    
+    data: any,
+    setData: any,
+    tab: any,
+    setCheckNum: any
+    checkNum: any
 };
 
 export const ToolTab = (props: Props) => {
@@ -25,10 +26,12 @@ export const ToolTab = (props: Props) => {
     return (
         <Section>
             <Tabs setTab={props.setTab} />
-            <StateBar 
-                tab={props.tab} 
-                data={props.data} 
-                setData={props.setData}/>
+            <StateBar
+                tab={props.tab}
+                data={props.data}
+                setData={props.setData}
+                checkNum={props.checkNum}
+                setCheckNum={props.setCheckNum} />
             <CheckToolBar
                 gitCheck={props.gitCheck}
                 setGitCheck={props.setGitCheck}
@@ -38,6 +41,7 @@ export const ToolTab = (props: Props) => {
                 setCalendar={props.setCalendar}
                 data={props.data}
                 setData={props.setData}
+                tab={props.tab}
             />
         </Section >
     );

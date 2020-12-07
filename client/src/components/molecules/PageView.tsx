@@ -10,6 +10,7 @@ type Props = {
     setCurrentPage: any
     data: any
     setData: any
+    pageNum: any
     setPageNum: any
     splitData: any
     setSplitData: any
@@ -27,6 +28,7 @@ export const PageView = (props: Props) => {
                 setData={props.setData}
                 currentPage={props.currentPage}
                 setCurrentPage={props.setCurrentPage}
+                pageNum={props.pageNum}
                 setPageNum={props.setPageNum}
                 splitData={props.splitData}
                 setSplitData={props.setSplitData}
