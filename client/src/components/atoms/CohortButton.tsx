@@ -1,7 +1,9 @@
 // @flow ' 
 import axios from 'axios';
 import * as React from 'react';
-import { Student } from '../molecules/Student';
+// import { Student } from '../molecules/Student';
+import { Button } from '@material-ui/core';
+
 type Cohort = {
     cohort: string,
     nth: string,
@@ -10,7 +12,7 @@ type Cohort = {
 export const CohortButton = (Props: Cohort) => {
     return (
         <span>
-            <button onClick={() => {
+            <Button variant="outlined" color="default" size="large" onClick={() => {
                 console.log(`${Props.cohort} ${Props.nth}기`)
 
                 axios
@@ -27,8 +29,8 @@ export const CohortButton = (Props: Cohort) => {
                     })
                     .catch((err) => { console.log(err) })
             }}>
-                기수 찾기!
-                </button>
+                필터
+                </Button>
         </span>
     );
 };

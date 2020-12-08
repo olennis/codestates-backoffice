@@ -1,5 +1,6 @@
 // @flow 
 import * as React from 'react';
+import { Button } from '@material-ui/core';
 
 type Props = {
     pageNum: any
@@ -19,7 +20,7 @@ export const LeftButton = (props: Props) => {
 
     return (
         <span>
-            <button onClick={() => min()}>⬅️</button>
+            <Button variant="outlined" color="default" size="large" onClick={() => min()}>⬅️</Button>
         </span>
     );
 };

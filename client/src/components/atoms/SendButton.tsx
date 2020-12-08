@@ -1,6 +1,7 @@
 // @flow 
-import React, { useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
+import { Button } from '@material-ui/core';
 
 type Props = {
     data: any
@@ -66,7 +67,7 @@ export const SendButton = (props: Props) => {
     }
     return (
         <span>
-            <button onClick={() => { sendData() }}>가자가자가자가자가자!</button>
+            <Button variant="outlined" color="default" size="large" onClick={() => { sendData() }}>실행!</Button>
 
         </span>
     );

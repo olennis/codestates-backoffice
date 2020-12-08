@@ -1,6 +1,8 @@
 // @flow 
 import * as React from 'react';
 import axios from 'axios'
+import { Button } from '@material-ui/core';
+
 type Name = {
     name: string,
     setData: any
@@ -13,7 +15,7 @@ type Name = {
 export const NameButton = (Props: Name) => {
     return (
         <span>
-            <button onClick={() => {
+            <Button variant="outlined" color="default" size="large" onClick={() => {
 
                 axios
                     .get(
@@ -25,7 +27,7 @@ export const NameButton = (Props: Name) => {
                         Props.setData(res.data.users)
                     })
                     .catch((err) => { console.log(err) })
-            }}>이름 찾기!</button>
+            }}>검색</Button>
         </span>
     );
 };
