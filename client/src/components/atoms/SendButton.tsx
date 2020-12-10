@@ -1,8 +1,6 @@
 // @flow 
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
-import { Button } from '@material-ui/core';
-
 type Props = {
     data: any
     cohort: any
@@ -14,7 +12,6 @@ type Props = {
     setData: any
 };
 export const SendButton = (props: Props) => {
-
     const sendData = () => {
         console.log(props.data, '버튼 클릭!')
         const people = props.data.reduce((arr: any, student: any) => {
@@ -29,14 +26,11 @@ export const SendButton = (props: Props) => {
             slack: props.slackCheck,
             calendar: props.calendar
         }
-
-
         console.log(sendingData, 'sendingData')
         if (props.action === '1') {
             console.log('탑승 API 실행')
         }
         else if (props.action === '2') {
-
             axios
                 .post(
                     `https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/moveTools`, sendingData,
@@ -62,13 +56,10 @@ export const SendButton = (props: Props) => {
         else {
             console.log('made by COE')
         }
-
-
     }
     return (
         <span>
-            <Button variant="outlined" color="default" size="large" onClick={() => { sendData() }}>실행!</Button>
-
+            <button onClick={() => { sendData() }}>가자가자가자가자가자!</button>
         </span>
     );
 };

@@ -1,7 +1,6 @@
 // @flow 
 import * as React from 'react';
 import Alert from '@material-ui/lab/Alert';
-
 type Props = {
     student: any
 };

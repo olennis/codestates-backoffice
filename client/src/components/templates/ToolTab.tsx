@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Tabs } from "../molecules/Tabs";
 import { StateBar } from "../molecules/StateBar"
 import { CheckToolBar } from "../molecules/CheckToolBar"
-
+import styled from 'styled-components'
 
 
 type Props = {
@@ -24,7 +24,7 @@ type Props = {
 export const ToolTab = (props: Props) => {
 
     return (
-        <div>
+        <Section>
             <Tabs setTab={props.setTab} />
             {/* <StateBar
                 setGitCheck={props.setGitCheck}
@@ -50,7 +50,10 @@ export const ToolTab = (props: Props) => {
                 tab={props.tab}
             /> */}
         </Section >
-
     );
 };
 
+const Section = styled.section`
+    padding: 4em;
+    background: papayawhip;
+`

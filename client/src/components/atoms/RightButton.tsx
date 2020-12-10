@@ -1,7 +1,5 @@
 // @flow 
 import * as React from 'react';
-import { Button } from '@material-ui/core';
-
 type Props = {
     pageNum: any
     setPageNum: any
@@ -16,11 +14,10 @@ export const RightButton = (props: Props) => {
         else {
             props.setPageNum(Math.ceil(props.data.length / props.view))
         }
-
     }
     return (
         <span>
-            <Button variant="outlined" color="default" size="large" onClick={() => max()}>➡️</Button>
+            <button onClick={() => max()}>➡️</button>
         </span>
     );
 };
