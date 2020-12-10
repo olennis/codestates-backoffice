@@ -79,6 +79,8 @@ export const StateBar = (props: Props) => {
                                     data={props.data}
                                     setData={props.setData}
                                 />
+                            </th>
+                            <th>
                                 <tr>
                                     <th>Github Check</th>
                                     <th>Slack Check</th>

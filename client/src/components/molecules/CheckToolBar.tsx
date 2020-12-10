@@ -21,30 +21,40 @@ type Props = {
 
 export const CheckToolBar = (props: Props) => {
     return (
-        <tr>
+        <ToolCheck>
             {
                 props.tab === '1' ?
                     <div></div> :
-                    <>
-                        <GithubTeam
-                            setGitCheck={props.setGitCheck}
-                            gitCheck={props.gitCheck}
-                            data={props.data}
-                            setData={props.setData} />
-                        <Slack
-                            setSlackCheck={props.setSlackCheck}
-                            slackCheck={props.slackCheck}
-                            data={props.data}
-                            setData={props.setData}
-                        />
-                        <GoogleCalendar
-                            setCalendar={props.setCalendar}
-                            calendar={props.calendar}
-                            data={props.data}
-                            setData={props.setData} />
-                    </>
+                    <td>
+                        <th>
+                            <GithubTeam
+                                setGitCheck={props.setGitCheck}
+                                gitCheck={props.gitCheck}
+                                data={props.data}
+                                setData={props.setData} />
+                        </th>
+                        <th>
+                            <Slack
+                                setSlackCheck={props.setSlackCheck}
+                                slackCheck={props.slackCheck}
+                                data={props.data}
+                                setData={props.setData}
+                            />
+                        </th>
+                        <th>
+                            <GoogleCalendar
+                                setCalendar={props.setCalendar}
+                                calendar={props.calendar}
+                                data={props.data}
+                                setData={props.setData} />
+                        </th>
+                    </td>
             }
-        </tr>
+        </ToolCheck>
     );
 };
 
+
+const ToolCheck = styled.td`
+    background: green;
+`
