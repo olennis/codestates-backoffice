@@ -25,30 +25,30 @@ export const CheckToolBar = (props: Props) => {
             {
                 props.tab === '1' ?
                     <div></div> :
-                    <td>
-                        <th>
+                    <tr>
+                        <ToolCheck2>
                             <GithubTeam
                                 setGitCheck={props.setGitCheck}
                                 gitCheck={props.gitCheck}
                                 data={props.data}
                                 setData={props.setData} />
-                        </th>
-                        <th>
+                        </ToolCheck2>
+                        <ToolCheck2>
                             <Slack
                                 setSlackCheck={props.setSlackCheck}
                                 slackCheck={props.slackCheck}
                                 data={props.data}
                                 setData={props.setData}
                             />
-                        </th>
-                        <th>
+                        </ToolCheck2>
+                        <ToolCheck2>
                             <GoogleCalendar
                                 setCalendar={props.setCalendar}
                                 calendar={props.calendar}
                                 data={props.data}
                                 setData={props.setData} />
-                        </th>
-                    </td>
+                        </ToolCheck2>
+                    </tr>
             }
         </ToolCheck>
     );
@@ -56,5 +56,8 @@ export const CheckToolBar = (props: Props) => {
 
 
 const ToolCheck = styled.td`
-    background: green;
+    
+`
+const ToolCheck2 = styled.td`
+    
 `

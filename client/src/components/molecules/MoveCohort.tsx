@@ -23,31 +23,31 @@ type Props = {
 export const MoveCohort = (props: Props) => {
     return (
         <tr>
-            <td><StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
-                setCheckNum={props.setCheckNum}></StudentCheck></td>
-            <td><Name student={props.student}></Name></td>
-            <td><Before student={props.student}></Before></td>
-            <td><Present student={props.student}></Present></td>
+            <th><StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
+                setCheckNum={props.setCheckNum}></StudentCheck></th>
+            <th><Name student={props.student}></Name></th>
+            <th><Before student={props.student}></Before></th>
+            <th><Present student={props.student}></Present></th>
 
             <Emojibottom>
-                <span>
+                <td>
                     {
                         props.student.checkValue && props.gitCheck ?
-                            <td>🙆🏻‍♂️</td> :
-                            <td>🙅🏻‍♀️</td>
+                            <Emoji>🙆🏻‍♂️</Emoji> :
+                            <Emoji>🙅🏻‍♀️</Emoji>
                     }
-                </span>
-                <span>
+                </td>
+                <td>
                     {
                         props.student.checkValue && props.slackCheck ?
-                            <tr>🙆🏻‍♂️</tr> :
-                            <tr>🙅🏻‍♀️</tr>
+                            <Emoji>🙆🏻‍♂️</Emoji> :
+                            <Emoji>🙅🏻‍♀️</Emoji>
                     }
-                </span>
+                </td>
                 <td>{
                     props.student.checkValue && props.calendar ?
-                        <td>🙆🏻‍♂️</td> :
-                        <td>🙅🏻‍♀️</td>
+                        <Emoji>🙆🏻‍♂️</Emoji> :
+                        <Emoji>🙅🏻‍♀️</Emoji>
                 }</td>
             </Emojibottom>
             <td>{
@@ -62,5 +62,9 @@ export const MoveCohort = (props: Props) => {
 
 
 const Emojibottom = styled.td`
-    background: blue;
+    
+`
+const Emoji = styled.th`
+    padding:20px;
+    font-size:25px;
 `

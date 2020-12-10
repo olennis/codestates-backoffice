@@ -245,12 +245,23 @@ export const StudentList = (props: Props) => {
                                 }
                             </table>
                             : props.view === '5'
-                                ? <div>
-                                    {console.log(props.splitData)}
+                                ?
+                                <table>
+                                    <StateBar
+                                        setGitCheck={props.setGitCheck}
+                                        gitCheck={props.gitCheck}
+                                        setSlackCheck={props.setSlackCheck}
+                                        slackCheck={props.slackCheck}
+                                        calendar={props.calendar}
+                                        setCalendar={props.setCalendar}
+                                        tab={props.tab}
+                                        data={props.data}
+                                        setData={props.setData}
+                                        checkNum={props.checkNum}
+                                        setCheckNum={props.setCheckNum}
+                                    />
                                     {
-                                        // console.log(props.splitData.map((data: any) => { return data[0] }))
-                                        props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
-                                            console.log(data[Number(props.pageNum) - 1])
+                                        props.splitData.map((data: any, idx: any) => {
                                             return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
                                                 return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                                             }).map((student: any, index: number) => {
@@ -269,16 +280,26 @@ export const StudentList = (props: Props) => {
                                                 />
                                             })
                                         })
-
                                     }
-                                </div>
+                                </table>
                                 : props.view === '10'
-                                    ? <div>
-                                        {console.log(props.splitData)}
+                                    ?
+                                    <table>
+                                        <StateBar
+                                            setGitCheck={props.setGitCheck}
+                                            gitCheck={props.gitCheck}
+                                            setSlackCheck={props.setSlackCheck}
+                                            slackCheck={props.slackCheck}
+                                            calendar={props.calendar}
+                                            setCalendar={props.setCalendar}
+                                            tab={props.tab}
+                                            data={props.data}
+                                            setData={props.setData}
+                                            checkNum={props.checkNum}
+                                            setCheckNum={props.setCheckNum}
+                                        />
                                         {
-                                            // console.log(props.splitData.map((data: any) => { return data[0] }))
-                                            props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
-                                                console.log(data[Number(props.pageNum) - 1])
+                                            props.splitData.map((data: any, idx: any) => {
                                                 return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
                                                     return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                                                 }).map((student: any, index: number) => {
@@ -297,16 +318,26 @@ export const StudentList = (props: Props) => {
                                                     />
                                                 })
                                             })
-
                                         }
-                                    </div>
+                                    </table>
                                     : props.view === '30'
-                                        ? <div>
-                                            {console.log(props.splitData)}
+                                        ?
+                                        <table>
+                                            <StateBar
+                                                setGitCheck={props.setGitCheck}
+                                                gitCheck={props.gitCheck}
+                                                setSlackCheck={props.setSlackCheck}
+                                                slackCheck={props.slackCheck}
+                                                calendar={props.calendar}
+                                                setCalendar={props.setCalendar}
+                                                tab={props.tab}
+                                                data={props.data}
+                                                setData={props.setData}
+                                                checkNum={props.checkNum}
+                                                setCheckNum={props.setCheckNum}
+                                            />
                                             {
-                                                // console.log(props.splitData.map((data: any) => { return data[0] }))
-                                                props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
-                                                    console.log(data[Number(props.pageNum) - 1])
+                                                props.splitData.map((data: any, idx: any) => {
                                                     return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
                                                         return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                                                     }).map((student: any, index: number) => {
@@ -326,7 +357,7 @@ export const StudentList = (props: Props) => {
                                                     })
                                                 })
                                             }
-                                        </div> : <div>까꿍</div> :
+                                        </table> : <div>까꿍</div> :
                         <div>과제 현황 페이지 입니다</div>
             }
         </>

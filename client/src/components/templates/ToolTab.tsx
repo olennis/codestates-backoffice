@@ -54,6 +54,6 @@ export const ToolTab = (props: Props) => {
 };
 
 const Section = styled.section`
-    padding: 4em;
-    background: papayawhip;
+    padding:1;
+    background: red;
 `
