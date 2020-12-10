@@ -21,36 +21,40 @@ type Props = {
 
 export const CheckToolBar = (props: Props) => {
     return (
-        <div>
+        <ToolCheck>
             {
                 props.tab === '1' ?
                     <div></div> :
-                    <CheckToolSection>
-                        <GithubTeam
-                            setGitCheck={props.setGitCheck}
-                            gitCheck={props.gitCheck}
-                            data={props.data}
-                            setData={props.setData} />
-                        <Slack
-                            setSlackCheck={props.setSlackCheck}
-                            slackCheck={props.slackCheck}
-                            data={props.data}
-                            setData={props.setData}
-                        />
-                        <GoogleCalendar
-                            setCalendar={props.setCalendar}
-                            calendar={props.calendar}
-                            data={props.data}
-                            setData={props.setData} />
-                    </CheckToolSection>
+                    <td>
+                        <th>
+                            <GithubTeam
+                                setGitCheck={props.setGitCheck}
+                                gitCheck={props.gitCheck}
+                                data={props.data}
+                                setData={props.setData} />
+                        </th>
+                        <th>
+                            <Slack
+                                setSlackCheck={props.setSlackCheck}
+                                slackCheck={props.slackCheck}
+                                data={props.data}
+                                setData={props.setData}
+                            />
+                        </th>
+                        <th>
+                            <GoogleCalendar
+                                setCalendar={props.setCalendar}
+                                calendar={props.calendar}
+                                data={props.data}
+                                setData={props.setData} />
+                        </th>
+                    </td>
             }
-
-        </div>
-
+        </ToolCheck>
     );
 };
 
-const CheckToolSection = styled.section`
-    padding: 1em;
-    background: yellow;
+
+const ToolCheck = styled.td`
+    background: green;
 `

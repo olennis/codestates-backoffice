@@ -26,13 +26,19 @@ export const ToolTab = (props: Props) => {
     return (
         <div>
             <Tabs setTab={props.setTab} />
-            <StateBar
+            {/* <StateBar
+                setGitCheck={props.setGitCheck}
+                gitCheck={props.gitCheck}
+                setSlackCheck={props.setSlackCheck}
+                slackCheck={props.slackCheck}
+                calendar={props.calendar}
+                setCalendar={props.setCalendar}
                 tab={props.tab}
                 data={props.data}
                 setData={props.setData}
                 checkNum={props.checkNum}
-                setCheckNum={props.setCheckNum} />
-            <CheckToolBar
+                setCheckNum={props.setCheckNum} /> */}
+            {/* <CheckToolBar
                 gitCheck={props.gitCheck}
                 setGitCheck={props.setGitCheck}
                 slackCheck={props.slackCheck}
@@ -42,8 +48,9 @@ export const ToolTab = (props: Props) => {
                 data={props.data}
                 setData={props.setData}
                 tab={props.tab}
-            />
-        </div >
+            /> */}
+        </Section >
+
     );
 };
 

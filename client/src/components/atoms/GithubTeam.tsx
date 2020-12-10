@@ -37,8 +37,8 @@ export const GithubTeam = (props: Props) => {
     }
 
     return (
-        <div>
+        <td>
             <input type="checkbox" onClick={(event: any) => gitmoji(event)} /> 깃헙
-        </div>
+        </td>
     );
 };
