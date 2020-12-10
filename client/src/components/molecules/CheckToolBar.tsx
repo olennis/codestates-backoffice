@@ -21,11 +21,11 @@ type Props = {
 
 export const CheckToolBar = (props: Props) => {
     return (
-        <div>
+        <tr>
             {
                 props.tab === '1' ?
                     <div></div> :
-                    <CheckToolSection>
+                    <>
                         <GithubTeam
                             setGitCheck={props.setGitCheck}
                             gitCheck={props.gitCheck}
@@ -42,15 +42,9 @@ export const CheckToolBar = (props: Props) => {
                             calendar={props.calendar}
                             data={props.data}
                             setData={props.setData} />
-                    </CheckToolSection>
+                    </>
             }
-
-        </div>
-
+        </tr>
     );
 };
 
-const CheckToolSection = styled.section`
-    padding: 1em;
-    background: yellow;
-`

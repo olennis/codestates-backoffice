@@ -65,6 +65,9 @@ function Page() {
         view={view}
         checkNum={checkNum}
         setCheckNum={setCheckNum}
+        setGitCheck={setGitCheck}
+        setSlackCheck={setSlackCheck}
+        setCalendar={setCalendar}
       />
       <Launch
         //객체 태스트

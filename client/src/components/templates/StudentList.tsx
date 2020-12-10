@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Student } from '../molecules/Student'
 import { MoveCohort } from '../molecules/MoveCohort'
 import { Table } from "antd"
+import { StateBar } from '../molecules/StateBar';
 
 
 interface Props {
@@ -19,7 +20,12 @@ interface Props {
     view: any
     checkNum: any
     setCheckNum: any
+    setGitCheck: any;
+    setSlackCheck: any;
+    setCalendar: any
 };
+
+//! 여기에추가
 export const StudentList = (props: Props) => {
     // console.log(props.data, '!!!!!!!')
     useEffect(() => {
@@ -45,7 +51,20 @@ export const StudentList = (props: Props) => {
                 props.tab === '1' ?
                     props.view === '1'
                         ?
-                        <div>
+                        <table>
+                            <StateBar
+                                setGitCheck={props.setGitCheck}
+                                gitCheck={props.gitCheck}
+                                setSlackCheck={props.setSlackCheck}
+                                slackCheck={props.slackCheck}
+                                calendar={props.calendar}
+                                setCalendar={props.setCalendar}
+                                tab={props.tab}
+                                data={props.data}
+                                setData={props.setData}
+                                checkNum={props.checkNum}
+                                setCheckNum={props.setCheckNum}
+                            />
                             {
                                 props.data
                                     .sort(function (a: any, b: any) {
@@ -63,15 +82,25 @@ export const StudentList = (props: Props) => {
                                             calendar={props.calendar}
                                             checkNum={props.checkNum}
                                             setCheckNum={props.setCheckNum}
-
                                         />
-
                                     })
                             }
-                        </div>
+                        </table>
                         : props.view === '5'
-                            ? <div>
-                                {console.log(props.splitData)}
+                            ? <table>
+                                <StateBar
+                                    setGitCheck={props.setGitCheck}
+                                    gitCheck={props.gitCheck}
+                                    setSlackCheck={props.setSlackCheck}
+                                    slackCheck={props.slackCheck}
+                                    calendar={props.calendar}
+                                    setCalendar={props.setCalendar}
+                                    tab={props.tab}
+                                    data={props.data}
+                                    setData={props.setData}
+                                    checkNum={props.checkNum}
+                                    setCheckNum={props.setCheckNum}
+                                />
                                 {
                                     // console.log(props.splitData.map((data: any) => { return data[0] }))
                                     props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
@@ -96,10 +125,22 @@ export const StudentList = (props: Props) => {
                                     })
 
                                 }
-                            </div>
+                            </table>
                             : props.view === '10'
-                                ? <div>
-                                    {console.log(props.splitData)}
+                                ? <table>
+                                    <StateBar
+                                        setGitCheck={props.setGitCheck}
+                                        gitCheck={props.gitCheck}
+                                        setSlackCheck={props.setSlackCheck}
+                                        slackCheck={props.slackCheck}
+                                        calendar={props.calendar}
+                                        setCalendar={props.setCalendar}
+                                        tab={props.tab}
+                                        data={props.data}
+                                        setData={props.setData}
+                                        checkNum={props.checkNum}
+                                        setCheckNum={props.setCheckNum}
+                                    />
                                     {
                                         // console.log(props.splitData.map((data: any) => { return data[0] }))
                                         props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
@@ -122,12 +163,23 @@ export const StudentList = (props: Props) => {
                                                 />
                                             })
                                         })
-
                                     }
-                                </div>
+                                </table>
                                 : props.view === '30'
-                                    ? <div>
-                                        {console.log(props.splitData)}
+                                    ? <table>
+                                        <StateBar
+                                            setGitCheck={props.setGitCheck}
+                                            gitCheck={props.gitCheck}
+                                            setSlackCheck={props.setSlackCheck}
+                                            slackCheck={props.slackCheck}
+                                            calendar={props.calendar}
+                                            setCalendar={props.setCalendar}
+                                            tab={props.tab}
+                                            data={props.data}
+                                            setData={props.setData}
+                                            checkNum={props.checkNum}
+                                            setCheckNum={props.setCheckNum}
+                                        />
                                         {
                                             // console.log(props.splitData.map((data: any) => { return data[0] }))
                                             props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
@@ -150,13 +202,28 @@ export const StudentList = (props: Props) => {
                                                     />
                                                 })
                                             })
+
                                         }
-                                    </div> : <div>까꿍</div>
+                                    </table>
+                                    : <div>까꿍</div>
                     :
                     props.tab === '2' ?
                         props.view === '1'
                             ?
-                            <div>
+                            <table>
+                                <StateBar
+                                    setGitCheck={props.setGitCheck}
+                                    gitCheck={props.gitCheck}
+                                    setSlackCheck={props.setSlackCheck}
+                                    slackCheck={props.slackCheck}
+                                    calendar={props.calendar}
+                                    setCalendar={props.setCalendar}
+                                    tab={props.tab}
+                                    data={props.data}
+                                    setData={props.setData}
+                                    checkNum={props.checkNum}
+                                    setCheckNum={props.setCheckNum}
+                                />
                                 {
                                     props.data
                                         .sort(function (a: any, b: any) {
@@ -174,12 +241,10 @@ export const StudentList = (props: Props) => {
                                                 calendar={props.calendar}
                                                 checkNum={props.checkNum}
                                                 setCheckNum={props.setCheckNum}
-
                                             />
-
                                         })
                                 }
-                            </div>
+                            </table>
                             : props.view === '5'
                                 ? <div>
                                     {console.log(props.splitData)}

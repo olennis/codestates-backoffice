@@ -6,29 +6,29 @@ type Props = {
     slackCheck: any
     setSlackCheck: any
     data: any
-    setData : any
+    setData: any
 };
 export const Slack = (props: Props) => {
 
-    const slmoji = (event:any) => {
+    const slmoji = (event: any) => {
         props.setSlackCheck(event.target.checked)
-        props.setData(props.data.map((student:any)=>{
-            if(student.checkValue && event.target.checked){
+        props.setData(props.data.map((student: any) => {
+            if (student.checkValue && event.target.checked) {
                 student.slackcheck = true
-                console.log(student.slackcheck,'☆')
+                console.log(student.slackcheck, '☆')
             }
-            else{
+            else {
                 student.gitcheck = false
-                console.log(student.slackcheck,'★')
+                console.log(student.slackcheck, '★')
             }
             return student
         }))
-        
+
     }
     return (
-        <div>
+        <td>
             <input type="checkbox" onClick={(event: any) => slmoji(event)} /> 슬랙
-        </div>
+        </td>
     );
 };
 
