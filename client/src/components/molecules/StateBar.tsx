@@ -67,7 +67,7 @@ export const StateBar = (props: Props) => {
                             <th>수강생 이름</th>
                             <th>직전 기수</th>
                             <th>현재 기수</th>
-                            <th>
+                            <th colSpan={3}>
                                 <CheckToolBar
                                     setGitCheck={props.setGitCheck}
                                     gitCheck={props.gitCheck}
