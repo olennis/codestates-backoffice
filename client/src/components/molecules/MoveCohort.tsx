@@ -59,9 +59,7 @@ export const MoveCohort = (props: Props) => {
     );
 };
 
-const Emoji = styled.td`
-    background: red;
-`
+
 
 const Emojibottom = styled.td`
     background: blue;

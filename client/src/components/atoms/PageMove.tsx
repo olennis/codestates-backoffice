@@ -3,8 +3,6 @@ import React, { useEffect } from 'react'
 import { Pagination } from '@material-ui/lab';
 import { LeftButton } from './LeftButton';
 import { RightButton } from './RightButton';
-
-
 type Props = {
     currentPage: any
     setCurrentPage: any
@@ -16,7 +14,6 @@ type Props = {
     splitData: any
     setSplitData: any
 };
-
 export const PageMove = (props: Props) => {
     useEffect(() => { // props.data 이 들어오는데 view 만큼 배열을 짤라
         let arr: any = [];
@@ -41,7 +38,6 @@ export const PageMove = (props: Props) => {
         arr2.push(arr)
         props.setSplitData(arr2)
     }, [props.view])
-
     return (
         <div>
             {
@@ -52,12 +48,9 @@ export const PageMove = (props: Props) => {
                         props.setPageNum(event.target.innerText)
                     }} count={Math.ceil(props.data.length / props.view)} variant="outlined" shape="rounded" />
             }
-
         </div>
     )
-
 };
-
 /**
  * ! Pagination 고려할 부분
  * * 토글인원 선택 --> 랜더되는 수강생이 토글인원 수
