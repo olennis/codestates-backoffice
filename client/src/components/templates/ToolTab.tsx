@@ -24,7 +24,7 @@ type Props = {
 export const ToolTab = (props: Props) => {
 
     return (
-        <Section>
+        <MenuTab>
             <Tabs setTab={props.setTab} />
             {/* <StateBar
                 setGitCheck={props.setGitCheck}
@@ -49,11 +49,10 @@ export const ToolTab = (props: Props) => {
                 setData={props.setData}
                 tab={props.tab}
             /> */}
-        </Section >
+        </MenuTab >
     );
 };
 
-const Section = styled.section`
-    padding:1;
-    background: red;
+const MenuTab = styled.div`
+    padding-top: 30px;
 `

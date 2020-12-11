@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Student } from '../molecules/Student'
 import { MoveCohort } from '../molecules/MoveCohort'
 import { StateBar } from '../molecules/StateBar';
-
+import styled from "styled-components"
 
 interface Props {
     data: Array<[]>,
@@ -45,7 +45,7 @@ export const StudentList = (props: Props) => {
     }, [])
 
     return (
-        <>
+        <DataSection>
             {
                 props.tab === '1' ?
                     props.view === '1'
@@ -360,9 +360,12 @@ export const StudentList = (props: Props) => {
                                         </table> : <div>까꿍</div> :
                         <div>과제 현황 페이지 입니다</div>
             }
-        </>
+        </DataSection>
     );
 };
 
 
-
+const DataSection = styled.div`
+    border: 1px solid red;
+    grid-column: 2 / 3;
+`

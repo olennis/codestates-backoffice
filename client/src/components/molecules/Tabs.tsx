@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import { StudentInfo } from "../atoms/StudentInfo"
 import { ChangeCohortTab } from "../atoms/ChangeCohortTab"
 import { WorksView } from "../atoms/WorksView"
-import styled from 'styled-components'
+
 
 type Props = {
     setTab: any
@@ -15,15 +15,10 @@ type Props = {
 export const Tabs = (props: Props) => {
 
     return (
-        <TabSection>
+        <div>
             <StudentInfo setTab={props.setTab} />
             <ChangeCohortTab setTab={props.setTab} />
             <WorksView setTab={props.setTab} />
-        </TabSection>
+        </div>
     );
 };
-
-const TabSection = styled.section`
-    padding: 1em;
-    background: skyblue;
-`
