@@ -2,7 +2,6 @@
 import * as React from 'react';
 import { Tabs } from "../molecules/Tabs";
 import { StateBar } from "../molecules/StateBar"
-import { CheckToolBar } from "../molecules/CheckToolBar"
 import styled from 'styled-components'
 
 
