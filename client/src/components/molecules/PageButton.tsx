@@ -20,9 +20,8 @@ export const PageButton = (props: Props) => {
 
         let arr: any = [];
         let arr2: any = []
-        console.log(props.view, '프롭스쩜뷰')
         if (props.view === '1') {
-            return props.data
+            arr.push(props.data)
         } else if (props.view === '5') {
             for (let i = 0; i < props.data.length; i += 5) {
                 arr.push(props.data.slice(i, i + 5))
@@ -34,7 +33,6 @@ export const PageButton = (props: Props) => {
         } else if (props.view === '30') {
             for (let i = 0; i < props.data.length; i += 30) {
                 arr.push(props.data.slice(i, i + 30))
-                console.log(arr[12])
             }
         }
         arr2.push(arr)

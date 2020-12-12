@@ -7,7 +7,6 @@ type setView = {
 export const View = (Props: setView) => {
     const ChooseView = (event: any) => {
         Props.setView(event.target.value)
-        console.log(typeof event.target.value)
     }
     return (
         <span>

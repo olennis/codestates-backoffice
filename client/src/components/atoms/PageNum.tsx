@@ -5,7 +5,6 @@ type Props = {
     setPageNum: any
 };
 export const PageNum = (props: Props) => {
-    console.log(props.count)
     return (
         <span>
             <button onClick={(event: any) => {
