@@ -13,19 +13,17 @@ export const GoogleCalendar = (props: Props) => {
         props.setData(props.data.map((student: any) => {
             if (student.checkValue && event.target.checked) {
                 student.calendarcheck = true
-                console.log(student.calendarcheck)
             }
             else {
                 student.calendarcheck = false
-                console.log(student.calendarcheck)
             }
             return student
         }))
 
     }
     return (
-        <td>
+        <th>
             <input type="checkbox" onClick={(event: any) => calmoji(event)} /> 구글캘린더
-        </td>
+        </th>
     );
 };

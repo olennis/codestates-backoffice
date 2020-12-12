@@ -20,7 +20,6 @@ export const PageButton = (props: Props) => {
 
         let arr: any = [];
         let arr2: any = []
-        console.log(props.view, '프롭스쩜뷰')
         if (props.view === '1') {
             arr.push(props.data)
         } else if (props.view === '5') {

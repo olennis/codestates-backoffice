@@ -7,7 +7,6 @@ type Props = {
 export const StudentInfo = (props: Props) => {
     const studentTab = (event: any) => {
         props.setTab(event.target.value)
-        console.log(event.target.value)
     }
     return (
         <span>

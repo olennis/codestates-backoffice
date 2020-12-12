@@ -25,11 +25,9 @@ export const GithubTeam = (props: Props) => {
         props.setData(props.data.map((student: any) => {
             if (student.checkValue && event.target.checked) {
                 student.gitcheck = true
-                console.log(student.gitcheck)
             }
             else {
                 student.gitcheck = false
-                console.log(student.gitcheck)
             }
             return student
         }))
@@ -37,8 +35,8 @@ export const GithubTeam = (props: Props) => {
     }
 
     return (
-        <td>
+        <th>
             <input type="checkbox" onClick={(event: any) => gitmoji(event)} /> 깃헙
-        </td>
+        </th>
     );
 };

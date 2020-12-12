@@ -7,7 +7,6 @@ type Props = {
 export const WorksView = (props: Props) => {
     const WorksViewTab = (event: any) => {
         props.setTab(event.target.value)
-        console.log(event.target.value)
     }
     return (
         <span>

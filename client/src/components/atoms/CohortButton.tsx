@@ -11,13 +11,11 @@ export const CohortButton = (Props: Cohort) => {
     return (
         <span>
             <button onClick={() => {
-                console.log(`${Props.cohort} ${Props.nth}기`)
                 axios
                     .get(
                         ` https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/getUsersByCohort?cohort=${Props.cohort} ${Props.nth}기`
                     )
                     .then((res) => {
-                        console.log('수강생 데이텨 : ', res.data)
                         Props.setData(res.data.users)
                     })
                     .catch((err) => { console.log(err) })

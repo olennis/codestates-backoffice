@@ -7,7 +7,6 @@ type setAction = {
 export const SelectAction = (Props: setAction) => {
     const ChooseAction = (event: any) => {
         Props.setAction(event.target.value)
-        console.log('event.target.value', event.target.value)
     }
     return (
         <span>

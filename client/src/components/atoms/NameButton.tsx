@@ -17,7 +17,6 @@ export const NameButton = (Props: Name) => {
                         ` https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/getUsersByName?name=${Props.name}`
                     )
                     .then((res) => {
-                        console.log(res)
                         Props.setData(res.data.users)
                     })
                     .catch((err) => { console.log(err) })

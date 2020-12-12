@@ -26,7 +26,6 @@ interface Props {
 
 //! 여기에추가
 export const StudentList = (props: Props) => {
-    // console.log(props.data, '!!!!!!!')
     useEffect(() => {
         // let checkData = props.data
         props.setData(
@@ -106,9 +105,7 @@ export const StudentList = (props: Props) => {
                                 setCheckNum={props.setCheckNum}
                             />
                             {
-                                // console.log(props.splitData.map((data: any) => { return data[0] }))
                                 props.splitData.map((data: any, idx: any) => { // * props.splitData = [[{}],[{}],[{}],[{}],[{}]]
-                                    console.log(data[Number(props.pageNum) - 1])
                                     return data[Number(props.pageNum) - 1].sort(function (a: any, b: any) {
                                         return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
                                     }).map((student: any, index: number) => {

@@ -22,49 +22,43 @@ type Props = {
 };
 export const MoveCohort = (props: Props) => {
     return (
-        <tr>
-            <th><StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
-                setCheckNum={props.setCheckNum}></StudentCheck></th>
-            <th><Name student={props.student}></Name></th>
-            <th><Before student={props.student}></Before></th>
-            <th><Present student={props.student}></Present></th>
+        <tbody>
+            <tr>
+                <td><StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
+                    setCheckNum={props.setCheckNum}></StudentCheck></td>
+                <td><Name student={props.student}></Name></td>
+                <td><Before student={props.student}></Before></td>
+                <td><Present student={props.student}></Present></td>
+                {
+                    props.student.checkValue && props.gitCheck ?
+                        <Emoji>🙆🏻‍♂️</Emoji> :
+                        <Emoji>🙅🏻‍♀️</Emoji>
+                }
 
-            <Emojibottom>
-                <td>
-                    {
-                        props.student.checkValue && props.gitCheck ?
-                            <Emoji>🙆🏻‍♂️</Emoji> :
-                            <Emoji>🙅🏻‍♀️</Emoji>
-                    }
-                </td>
-                <td>
-                    {
-                        props.student.checkValue && props.slackCheck ?
-                            <Emoji>🙆🏻‍♂️</Emoji> :
-                            <Emoji>🙅🏻‍♀️</Emoji>
-                    }
-                </td>
-                <td>{
+                {
+                    props.student.checkValue && props.slackCheck ?
+                        <Emoji>🙆🏻‍♂️</Emoji> :
+                        <Emoji>🙅🏻‍♀️</Emoji>
+                }
+
+                {
                     props.student.checkValue && props.calendar ?
                         <Emoji>🙆🏻‍♂️</Emoji> :
                         <Emoji>🙅🏻‍♀️</Emoji>
+                }
+
+                <td>{
+                    props.student.result ?
+                        <Result student={props.student}></Result> :
+                        <span></span>
                 }</td>
-            </Emojibottom>
-            <td>{
-                props.student.result ?
-                    <Result student={props.student}></Result> :
-                    <span></span>
-            }</td>
-        </tr>
+            </tr>
+        </tbody>
     );
 };
 
 
-
-const Emojibottom = styled.td`
-    
-`
-const Emoji = styled.th`
+const Emoji = styled.td`
     padding:20px;
     font-size:25px;
 `

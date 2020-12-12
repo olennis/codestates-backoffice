@@ -15,20 +15,18 @@ export const Slack = (props: Props) => {
         props.setData(props.data.map((student: any) => {
             if (student.checkValue && event.target.checked) {
                 student.slackcheck = true
-                console.log(student.slackcheck, '☆')
             }
             else {
                 student.gitcheck = false
-                console.log(student.slackcheck, '★')
             }
             return student
         }))
 
     }
     return (
-        <td>
+        <th>
             <input type="checkbox" onClick={(event: any) => slmoji(event)} /> 슬랙
-        </td>
+        </th>
     );
 };
 

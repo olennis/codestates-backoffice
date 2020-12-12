@@ -18,7 +18,6 @@ export const PageMove = (props: Props) => {
     useEffect(() => { // props.data 이 들어오는데 view 만큼 배열을 짤라
         let arr: any = [];
         let arr2: any = []
-        console.log(props.view, '프롭스쩜뷰')
         if (props.view === '1') {
             return props.data
         } else if (props.view === '5') {
@@ -32,7 +31,6 @@ export const PageMove = (props: Props) => {
         } else if (props.view === '30') {
             for (let i = 0; i < props.data.length; i += 30) {
                 arr.push(props.data.slice(i, i + 30))
-                console.log(arr[12])
             }
         }
         arr2.push(arr)
@@ -44,7 +42,6 @@ export const PageMove = (props: Props) => {
                 props.view === '1'
                     ? <Pagination count={props.data.length / props.data.length} variant="outlined" shape="rounded" />
                     : <Pagination onClick={(event: any) => {
-                        console.log(event.target, '???????')
                         props.setPageNum(event.target.innerText)
                     }} count={Math.ceil(props.data.length / props.view)} variant="outlined" shape="rounded" />
             }
