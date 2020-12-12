@@ -125,6 +125,7 @@ const BodySection = styled.div`
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-auto-rows: minmax(100px, auto);
 `
 
 const BottomSection = styled.div`
