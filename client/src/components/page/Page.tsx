@@ -72,6 +72,7 @@ function Page() {
           setGitCheck={setGitCheck}
           setSlackCheck={setSlackCheck}
           setCalendar={setCalendar}
+
         />
       </BodySection>
       <BottomSection>
