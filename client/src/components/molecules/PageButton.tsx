@@ -52,7 +52,7 @@ export const PageButton = (props: Props) => {
                     <PageNum setPageNum={props.setPageNum} count={1} />
                     :
                     [...Array(Math.ceil(props.data.length / props.view))].map((n: any, idx: number) => {
-                        return <PageNum setPageNum={props.setPageNum} count={idx + 1} ></PageNum>
+                        return <PageNum key={idx} setPageNum={props.setPageNum} count={idx + 1} ></PageNum>
                     })
             }
             <RightButton pageNum={props.pageNum} setPageNum={props.setPageNum} view={props.view} data={props.data} />
