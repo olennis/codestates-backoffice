@@ -1,8 +1,9 @@
 // @flow 
 import * as React from 'react';
-import { ActionSection } from '../molecules/ActionSection';
-import { PageButton } from '../molecules/PageButton';
-import { PageView } from '../molecules/PageView';
+import { ActionSection } from './ActionSection';
+import { PageButton } from './PageButton';
+import styled from "styled-components"
+
 
 
 type Props = {
@@ -27,7 +28,7 @@ type Props = {
 };
 export const Launch = (props: Props) => {
     return (
-        <div>
+        <Container>
 
             <PageButton
                 setView={props.setView}
@@ -38,18 +39,7 @@ export const Launch = (props: Props) => {
                 setSplitData={props.setSplitData}
                 checkNum={props.checkNum}
             />
-            {/* <PageView
-                view={props.view}
-                setView={props.setView}
-                currentPage={props.currentPage}
-                setCurrentPage={props.setCurrentPage}
-                data={props.data}
-                setData={props.setData}
-                splitData={props.splitData}
-                setSplitData={props.setSplitData}
-                pageNum={props.pageNum}
-                setPageNum={props.setPageNum}
-            /> */}
+
             <ActionSection cohort={props.cohort}
                 nth={props.nth}
                 gitCheck={props.gitCheck}
@@ -60,6 +50,13 @@ export const Launch = (props: Props) => {
                 data={props.data}
                 setData={props.setData}
             />
-        </div>
+        </Container>
     );
 };
+
+const Container = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:100%;
+`

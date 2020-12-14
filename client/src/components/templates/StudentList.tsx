@@ -1,9 +1,12 @@
 // @flow 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Student } from '../molecules/Student'
 import { MoveCohort } from '../molecules/MoveCohort'
 import { StateBar } from '../molecules/StateBar';
 import styled from "styled-components"
+import { Launch } from '../molecules/Launch'
+
+
 
 interface Props {
     data: Array<[]>,
@@ -19,10 +22,23 @@ interface Props {
     view: any
     checkNum: any
     setCheckNum: any
-    setGitCheck: any;
-    setSlackCheck: any;
+    setGitCheck: any
+    setSlackCheck: any
     setCalendar: any
+    cohort: any
+    nth: any
+    action: any
+    setAction: any
+    setView: any
+    currentPage: any
+    setCurrentPage: any
+    setSplitData: any
+    setPageNum: any
 };
+
+
+
+
 
 //! 여기에추가
 export const StudentList = (props: Props) => {
@@ -48,7 +64,7 @@ export const StudentList = (props: Props) => {
             {
                 props.tab === '1' ?
                     props.view === '1' ?
-                        <table>
+                        <Table>
                             <StateBar
                                 view={props.view}
                                 pageNum={props.pageNum}
@@ -85,9 +101,9 @@ export const StudentList = (props: Props) => {
                                         />
                                     })
                             }
-                        </table>
+                        </Table>
                         :
-                        <table>
+                        <Table>
                             <StateBar
                                 view={props.view}
                                 pageNum={props.pageNum}
@@ -126,11 +142,11 @@ export const StudentList = (props: Props) => {
                                 })
 
                             }
-                        </table>
+                        </Table>
                     :
                     props.tab === '2' ?
                         props.view === '1' ?
-                            <table>
+                            <Table>
                                 <StateBar
                                     view={props.view}
                                     pageNum={props.pageNum}
@@ -167,9 +183,9 @@ export const StudentList = (props: Props) => {
                                             />
                                         })
                                 }
-                            </table>
+                            </Table>
                             :
-                            <table>
+                            <Table>
                                 <StateBar
                                     view={props.view}
                                     pageNum={props.pageNum}
@@ -207,9 +223,29 @@ export const StudentList = (props: Props) => {
                                         })
                                     })
                                 }
-                            </table>
+                            </Table>
                         : <div>과제현황 페이지 입니다</div>
             }
+            <Launch
+                cohort={props.cohort}
+                nth={props.nth}
+                gitCheck={props.gitCheck}
+                slackCheck={props.slackCheck}
+                calendar={props.calendar}
+                action={props.action}
+                setAction={props.setAction}
+                data={props.data}
+                setData={props.setData}
+                view={props.view}
+                setView={props.setView}
+                currentPage={props.currentPage}
+                setCurrentPage={props.setCurrentPage}
+                splitData={props.splitData}
+                setSplitData={props.setSplitData}
+                pageNum={props.pageNum}
+                setPageNum={props.setPageNum}
+                checkNum={props.checkNum}
+            ></Launch>
         </DataSection>
     );
 };
@@ -218,4 +254,9 @@ export const StudentList = (props: Props) => {
 const DataSection = styled.div`
     border: 1px solid red;
     grid-column: 2 / 3;
+    
+`
+const Table = styled.table`
+    border-collapse:collapse;
+    width:100%
 `

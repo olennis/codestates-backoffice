@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { SearchCohort } from '../templates/SearchCohort'
 import { ToolTab } from '../templates/ToolTab'
 import { StudentList } from '../templates/StudentList'
-import { Launch } from "../templates/Launch"
+import { Launch } from "../molecules/Launch"
 import styled from "styled-components"
 
 
@@ -76,29 +76,19 @@ function Page() {
               setGitCheck={setGitCheck}
               setSlackCheck={setSlackCheck}
               setCalendar={setCalendar}
-
-            />
-            <Launch
-              //객체 태스트
               cohort={cohort}
               nth={nth}
-              gitCheck={gitCheck}
-              slackCheck={slackCheck}
-              calendar={calendar}
               action={action}
               setAction={setAction}
-              data={data}
-              setData={setData}
-              view={view}
               setView={setView}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
-              splitData={splitData}
               setSplitData={setSplitData}
-              pageNum={pageNum}
               setPageNum={setPageNum}
-              checkNum={checkNum}
+
+
             />
+
           </>
         }
 
@@ -124,16 +114,19 @@ const Container = styled.div`
   margin-top: 50px;
   margin-left: 20px;
   margin-right: 20px;
+  
 `
 
 const HeaderTab = styled.div`
   border: 1px solid black;
+  background-color : rgb(227, 236, 252);
 `
 const BodySection = styled.div`
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-auto-rows: minmax(100px, auto);
+  background-color : rgb(248, 249, 251);
 `
 
 const BottomSection = styled.div`

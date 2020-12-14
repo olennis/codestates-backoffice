@@ -1,5 +1,6 @@
 // @flow 
-import React, { useState } from 'react';
+import React from 'react';
+import Checkbox from '@material-ui/core/Checkbox';
 type Props = {
     student: any,
     index: any,
@@ -32,8 +33,8 @@ export const StudentCheck = (props: Props) => {
 
 
     return (
-        <span>
-            <input type='checkbox' checked={props.student.checkValue || ''} onChange={(e: any) => { chooseOne(e) }} ></input>
-        </span>
+
+        <Checkbox color='primary' checked={props.student.checkValue || false} onChange={(e: any) => { chooseOne(e) }} ></Checkbox>
+
     );
 }
