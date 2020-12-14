@@ -103,9 +103,6 @@ function Page() {
         }
 
       </BodySection>
-      <BottomSection>
-
-      </BottomSection>
     </Container >
   );
 }
@@ -127,18 +124,15 @@ const Container = styled.div`
 `
 
 const HeaderTab = styled.div`
-  border: 1px solid black;
+
+  background-color: rgb(242, 246, 252);
+  border-radius: 1em;
 `
 const BodySection = styled.div`
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-auto-rows: minmax(100px, auto);
-`
-
-const BottomSection = styled.div`
-  border: 1px solid black;
-
 `
 
 export default Page;
