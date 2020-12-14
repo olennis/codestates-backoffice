@@ -1,5 +1,6 @@
 // @flow 
 import * as React from 'react';
+import Button from '@material-ui/core/Button';
 type Props = {
     pageNum: any
     setPageNum: any
@@ -14,8 +15,8 @@ export const LeftButton = (props: Props) => {
         }
     }
     return (
-        <span>
-            <button onClick={() => min()}>⬅️</button>
-        </span>
+
+        <Button onClick={() => min()}>{'<'}</Button>
+
     );
 };

@@ -58,11 +58,11 @@ export const PageButton = (props: Props) => {
             <RightButton pageNum={props.pageNum} setPageNum={props.setPageNum} view={props.view} data={props.data} />
 
 
-            {props.view === '1' ?
+            {/* {props.view === '1' ?
                 <span>1/1 ----------페이지 현황</span> :
                 <span>{`${props.pageNum} / ${Math.ceil(props.data.length / props.view)} ----------페이지 현황`}</span>
 
-            }
+            } */}
             {/* 아톰까지 내리기 귀찮아서...걍 여기 만들었어요..프롭스 너무 귀찮... */}
         </div>
     );

@@ -1,5 +1,7 @@
 // @flow 
 import * as React from 'react';
+import Button from '@material-ui/core/Button';
+
 type Props = {
     count: any
     setPageNum: any
@@ -7,9 +9,9 @@ type Props = {
 export const PageNum = (props: Props) => {
     return (
         <span>
-            <button onClick={(event: any) => {
+            <Button size='small' onClick={(event: any) => {
                 props.setPageNum(event.target.innerText)
-            }} >{props.count}</button>
+            }} >{props.count}</Button>
         </span>
     );
 };

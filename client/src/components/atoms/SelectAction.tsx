@@ -1,21 +1,34 @@
 // @flow 
 import React from 'react'
+import styled from "styled-components"
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+
 type setAction = {
     action: any
     setAction: any
 };
+
+
+
 export const SelectAction = (Props: setAction) => {
     const ChooseAction = (event: any) => {
         Props.setAction(event.target.value)
     }
     return (
-        <span>
-            <select value={Props.action} onChange={(event: any) => ChooseAction(event)}>
-                <option value="0">동작선택</option>
-                <option value="1">탑승</option>
-                <option value="2">기수이동</option>
-                <option value="3">하차</option>
-            </select>
-        </span>
+
+        <Select variant='outlined' value={Props.action} onChange={(event: any) => ChooseAction(event)} style={{
+            height: '30px',
+            width: '150px'
+        }}>
+            <MenuItem value="0">동작선택</MenuItem>
+            <MenuItem value="1">탑승</MenuItem>
+            <MenuItem value="2">기수이동</MenuItem>
+            <MenuItem value="3">하차</MenuItem>
+        </Select>
+
     );
 };
+
+
+
