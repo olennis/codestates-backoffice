@@ -55,48 +55,56 @@ function Page() {
           nth={nth}
           setData={setData}
         />
-        <StudentList
-          data={data}
-          setData={setData}
-          setStudentData={setStudentData}
-          studentData={studentData}
-          tab={tab}
-          gitCheck={gitCheck}
-          slackCheck={slackCheck}
-          calendar={calendar}
-          splitData={splitData}
-          pageNum={pageNum}
-          view={view}
-          checkNum={checkNum}
-          setCheckNum={setCheckNum}
-          setGitCheck={setGitCheck}
-          setSlackCheck={setSlackCheck}
-          setCalendar={setCalendar}
+        {data.length === 0 ?
+          <div></div>
+          :
+          <>
+            <StudentList
+              data={data}
+              setData={setData}
+              setStudentData={setStudentData}
+              studentData={studentData}
+              tab={tab}
+              gitCheck={gitCheck}
+              slackCheck={slackCheck}
+              calendar={calendar}
+              splitData={splitData}
+              pageNum={pageNum}
+              view={view}
+              checkNum={checkNum}
+              setCheckNum={setCheckNum}
+              setGitCheck={setGitCheck}
+              setSlackCheck={setSlackCheck}
+              setCalendar={setCalendar}
 
-        />
+            />
+            <Launch
+              //객체 태스트
+              cohort={cohort}
+              nth={nth}
+              gitCheck={gitCheck}
+              slackCheck={slackCheck}
+              calendar={calendar}
+              action={action}
+              setAction={setAction}
+              data={data}
+              setData={setData}
+              view={view}
+              setView={setView}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              splitData={splitData}
+              setSplitData={setSplitData}
+              pageNum={pageNum}
+              setPageNum={setPageNum}
+              checkNum={checkNum}
+            />
+          </>
+        }
+
       </BodySection>
       <BottomSection>
-        <Launch
-          //객체 태스트
-          cohort={cohort}
-          nth={nth}
-          gitCheck={gitCheck}
-          slackCheck={slackCheck}
-          calendar={calendar}
-          action={action}
-          setAction={setAction}
-          data={data}
-          setData={setData}
-          view={view}
-          setView={setView}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          splitData={splitData}
-          setSplitData={setSplitData}
-          pageNum={pageNum}
-          setPageNum={setPageNum}
-          checkNum={checkNum}
-        />
+
       </BottomSection>
     </Container >
   );

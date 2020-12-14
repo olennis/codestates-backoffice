@@ -71,11 +71,9 @@ export const StateBar = (props: Props) => {
                     <tr>
                         <th>
                             {
-                                props.data.length === 0 ?
-                                    <input type='checkbox' onChange={(e: any) => { chooseAll(e) }} ></input> :
-                                    props.view === '1' ?
-                                        <input type='checkbox' checked={(props.data.length === props.data.filter((student: any) => student.checkValue).length ? true : false)} onChange={(e: any) => { chooseAll(e) }} ></input> :
-                                        <input type='checkbox' checked={(props.splitData[0][Number(props.pageNum) - 1].length === props.splitData[0][Number(props.pageNum) - 1].filter((student: any) => student.checkValue).length ? true : false)} onChange={(e: any) => { chooseAll(e) }} ></input>
+                                props.view === '1' ?
+                                    <input type='checkbox' checked={((props.data.length === props.data.filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></input> :
+                                    <input type='checkbox' checked={((props.splitData[0][Number(props.pageNum) - 1].length === props.splitData[0][Number(props.pageNum) - 1].filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></input>
 
                             }
                         </th>
