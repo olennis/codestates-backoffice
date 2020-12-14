@@ -9,7 +9,7 @@ export const SelectCohort = (Props: setCohort) => {
         Props.setCohort(e.target.value)
     }
     return (
-        <span>
+        <div>
             <select value={Props.cohort} onChange={(e: any) => changeCohort(e)}>
                 <option value='??'>코스를 선택하세요</option>
                 <option value='Full Immersive'>Full Immersive</option>
@@ -17,6 +17,6 @@ export const SelectCohort = (Props: setCohort) => {
                 <option value='Part Immersive'>Part Immersive</option>
                 <option value='Part Pre'>Part Pre</option>
             </select>
-        </span>
+        </div>
     );
 };

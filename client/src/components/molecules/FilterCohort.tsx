@@ -19,8 +19,10 @@ export const FilterCohort = (props: Props) => {
     return (
         <div>
             <SelectCohort setCohort={props.setCohort} cohort={props.cohort}></SelectCohort>
-            <InputCohort setNth={props.setNth}></InputCohort>
-            <CohortButton cohort={props.cohort} nth={props.nth} setData={props.setData} ></CohortButton>
+            <div>
+                <InputCohort setNth={props.setNth}></InputCohort>
+                <CohortButton cohort={props.cohort} nth={props.nth} setData={props.setData} ></CohortButton>
+            </div>
         </div>
     );
 };

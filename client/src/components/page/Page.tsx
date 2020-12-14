@@ -46,15 +46,17 @@ function Page() {
         />
       </HeaderTab>
       <BodySection>
-        <SearchCohort
-          cohort={cohort}
-          setCohort={setCohort}
-          setNth={setNth}
-          setName={setName}
-          name={name}
-          nth={nth}
-          setData={setData}
-        />
+        <FixScroll>
+          <SearchCohort
+            cohort={cohort}
+            setCohort={setCohort}
+            setNth={setNth}
+            setName={setName}
+            name={name}
+            nth={nth}
+            setData={setData}
+          />
+        </FixScroll>
         {data.length === 0 ?
           <div></div>
           :
@@ -76,7 +78,6 @@ function Page() {
               setGitCheck={setGitCheck}
               setSlackCheck={setSlackCheck}
               setCalendar={setCalendar}
-
               cohort={cohort}
               nth={nth}
               action={action}
@@ -86,17 +87,10 @@ function Page() {
               setCurrentPage={setCurrentPage}
               setSplitData={setSplitData}
               setPageNum={setPageNum}
-
-
             />
-
-
           </>
         }
-
       </BodySection>
-
-
     </Container >
   );
 }
@@ -131,6 +125,15 @@ const BodySection = styled.div`
   grid-template-columns: 1fr 3fr;
   grid-auto-rows: minmax(100px, auto);
   background-color : rgb(248, 249, 251);
+`
+
+const FixScroll = styled.div`
+  position: fixed;
+  z-index: 1,
+  background: #eee;
+  margin-left: 40px;
+  font-size: 28px;
+  padding: 0px 10px;
 `
 
 export default Page;
