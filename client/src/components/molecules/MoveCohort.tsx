@@ -7,6 +7,8 @@ import { Present } from '../atoms/Present'
 import { StudentCheck } from '../atoms/StudentCheck'
 import { Result } from '../atoms/Result'
 import styled from 'styled-components'
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import { green } from '@material-ui/core/colors';
 
 type Props = {
     student: any,
@@ -23,42 +25,50 @@ type Props = {
 export const MoveCohort = (props: Props) => {
     return (
         <tbody>
-            <tr>
-                <td><StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
-                    setCheckNum={props.setCheckNum}></StudentCheck></td>
-                <td><Name student={props.student}></Name></td>
-                <td><Before student={props.student}></Before></td>
-                <td><Present student={props.student}></Present></td>
-                {
+            <StudentTr>
+                <Student><StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
+                    setCheckNum={props.setCheckNum}></StudentCheck></Student>
+                <Student><Name student={props.student}></Name></Student>
+                <Student><Before student={props.student}></Before></Student>
+                <Student><Present student={props.student}></Present></Student>
+                <Student>{
                     props.student.checkValue && props.gitCheck ?
-                        <Emoji>🙆🏻‍♂️</Emoji> :
-                        <Emoji>🙅🏻‍♀️</Emoji>
+                        <CheckCircleIcon style={{ color: green[500] }}></CheckCircleIcon> :
+                        <div></div>
                 }
+                </Student>
 
-                {
+                <Student>{
                     props.student.checkValue && props.slackCheck ?
-                        <Emoji>🙆🏻‍♂️</Emoji> :
-                        <Emoji>🙅🏻‍♀️</Emoji>
+                        <CheckCircleIcon style={{ color: green[500] }}></CheckCircleIcon> :
+                        <div></div>
                 }
+                </Student>
 
-                {
-                    props.student.checkValue && props.calendar ?
-                        <Emoji>🙆🏻‍♂️</Emoji> :
-                        <Emoji>🙅🏻‍♀️</Emoji>
-                }
+                <Student>
+                    {
+                        props.student.checkValue && props.calendar ?
+                            <CheckCircleIcon style={{ color: green[500] }}></CheckCircleIcon> :
+                            <div></div>
+                    }
+                </Student>
 
-                <td>{
+                <Student>{
                     props.student.result ?
                         <Result student={props.student}></Result> :
                         <span></span>
-                }</td>
-            </tr>
+                }</Student>
+            </StudentTr>
         </tbody>
     );
 };
 
 
-const Emoji = styled.td`
-    padding:20px;
-    font-size:25px;
+const StudentTr = styled.tr`
+    border: solid 5px rgb(245,246,247);
+`
+const Student = styled.th`
+    padding-top: 20px;
+    font-weight:normal;
+    
 `

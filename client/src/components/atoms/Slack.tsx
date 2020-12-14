@@ -1,7 +1,6 @@
 // @flow 
 import * as React from 'react';
-import { CheckAtoms } from "./CheckAtoms"
-
+import Checkbox from '@material-ui/core/Checkbox';
 type Props = {
     slackCheck: any
     setSlackCheck: any
@@ -25,7 +24,7 @@ export const Slack = (props: Props) => {
     }
     return (
         <th>
-            <input type="checkbox" onClick={(event: any) => slmoji(event)} /> 슬랙
+            Slack <Checkbox color='primary' onClick={(event: any) => slmoji(event)} />
         </th>
     );
 };

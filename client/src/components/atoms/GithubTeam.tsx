@@ -1,6 +1,6 @@
 // @flow 
 import React from 'react'
-
+import Checkbox from '@material-ui/core/Checkbox';
 type Props = {
     gitCheck: any
     setGitCheck: any
@@ -36,7 +36,7 @@ export const GithubTeam = (props: Props) => {
 
     return (
         <th>
-            <input type="checkbox" onClick={(event: any) => gitmoji(event)} /> 깃헙
+            Github<Checkbox color='primary' onClick={(event: any) => gitmoji(event)} />
         </th>
     );
 };

@@ -1,5 +1,6 @@
 // @flow 
 import * as React from 'react';
+import Checkbox from '@material-ui/core/Checkbox';
 
 type Props = {
     calendar: any
@@ -23,7 +24,7 @@ export const GoogleCalendar = (props: Props) => {
     }
     return (
         <th>
-            <input type="checkbox" onClick={(event: any) => calmoji(event)} /> 구글캘린더
+            Calendar <Checkbox color='primary' onClick={(event: any) => calmoji(event)} />
         </th>
     );
 };

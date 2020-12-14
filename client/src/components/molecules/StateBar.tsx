@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { GoogleCalendar } from "../atoms/GoogleCalendar"
 import { GithubTeam } from '../atoms/GithubTeam';
 import { Slack } from '../atoms/Slack';
+import Checkbox from '@material-ui/core/Checkbox';
 
 type Props = {
     tab: any
@@ -65,39 +66,41 @@ export const StateBar = (props: Props) => {
 
 
     return (
-        <thead>
+        <Header>
             {
                 props.tab === '1' ?
-                    <tr>
-                        <th>
+                    <TableTr>
+                        <TableTh>
                             {
                                 props.view === '1' ?
-                                    <input type='checkbox' checked={((props.data.length === props.data.filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></input> :
-                                    <input type='checkbox' checked={((props.splitData[0][Number(props.pageNum) - 1].length === props.splitData[0][Number(props.pageNum) - 1].filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></input>
+
+                                    <Checkbox color="primary" checked={((props.data.length === props.data.filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></Checkbox> :
+                                    <Checkbox color="primary" checked={((props.splitData[0][Number(props.pageNum) - 1].length === props.splitData[0][Number(props.pageNum) - 1].filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></Checkbox>
+
 
                             }
-                        </th>
-                        <th>수강생 이름</th>
-                        <th>E-mail</th>
-                        <th>Github ID</th>
-                        <th>직전 기수</th>
-                        <th>현재 기수</th>
-                    </tr>
+                        </TableTh>
+                        <TableTh>Name</TableTh>
+                        <TableTh>E-mail</TableTh>
+                        <TableTh>Github ID</TableTh>
+                        <TableTh>Past</TableTh>
+                        <TableTh>Current</TableTh>
+                    </TableTr>
                     :
                     props.tab === '2' ?
                         <tr>
                             <th>
                                 {
                                     props.data.length === 0 ?
-                                        <input type='checkbox' onChange={(e: any) => { chooseAll(e) }} ></input> :
+                                        <Checkbox color='primary' onChange={(e: any) => { chooseAll(e) }} ></Checkbox> :
                                         props.view === '1' ?
-                                            <input type='checkbox' checked={(props.data.length === props.data.filter((student: any) => student.checkValue).length ? true : false)} onChange={(e: any) => { chooseAll(e) }} ></input> :
-                                            <input type='checkbox' checked={(props.splitData[0][Number(props.pageNum) - 1].length === props.splitData[0][Number(props.pageNum) - 1].filter((student: any) => student.checkValue).length ? true : false)} onChange={(e: any) => { chooseAll(e) }} ></input>
+                                            <Checkbox color="primary" checked={((props.data.length === props.data.filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></Checkbox> :
+                                            <Checkbox color="primary" checked={((props.splitData[0][Number(props.pageNum) - 1].length === props.splitData[0][Number(props.pageNum) - 1].filter((student: any) => student.checkValue).length ? true : false))} onChange={(e: any) => { chooseAll(e) }} ></Checkbox>
                                 }
                             </th>
-                            <th>수강생 이름</th>
-                            <th>직전 기수</th>
-                            <th>현재 기수</th>
+                            <th>Name</th>
+                            <th>Past</th>
+                            <th>Current</th>
 
                             <GithubTeam
                                 setGitCheck={props.setGitCheck}
@@ -123,6 +126,19 @@ export const StateBar = (props: Props) => {
                         </tr>
             }
 
-        </thead>
+        </Header>
     );
 };
+
+
+const Header = styled.thead`
+    background-color:rgb(253, 253, 255);
+    line-height:6vh;
+    
+`
+const TableTh = styled.th`
+    
+`
+const TableTr = styled.tr`
+    border:solid rgb(238,238,240) 4px
+`

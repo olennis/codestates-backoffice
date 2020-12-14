@@ -25,7 +25,9 @@ export const Student = (props: Props) => {
 
     return (
         <tbody>
-            <tr>
+
+            <StudentTr>
+
                 <StudentInfo>
                     <StudentCheck student={props.student} index={props.index} setData={props.setData} data={props.data} checkNum={props.checkNum}
                         setCheckNum={props.setCheckNum}></StudentCheck>
@@ -35,13 +37,20 @@ export const Student = (props: Props) => {
                 <StudentInfo><GitId student={props.student}></GitId></StudentInfo>
                 <StudentInfo><Before student={props.student}></Before></StudentInfo>
                 <StudentInfo><Present student={props.student}></Present></StudentInfo>
-            </tr >
+
+            </StudentTr >
+
         </tbody>
     );
 };
 
 const StudentInfo = styled.th`
     padding-top: 20px;
+    font-weight: normal;
+    
+`
+const StudentTr = styled.tr`
+    border: solid 5px rgb(245,246,247);
 `
 
 
