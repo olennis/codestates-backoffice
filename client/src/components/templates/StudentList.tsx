@@ -252,7 +252,6 @@ export const StudentList = (props: Props) => {
 
 
 const DataSection = styled.div`
-    border: 1px solid red;
     grid-column: 2 / 3;
     
 `

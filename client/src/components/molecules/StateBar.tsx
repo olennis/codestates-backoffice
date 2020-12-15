@@ -117,7 +117,11 @@ export const StateBar = (props: Props) => {
                                 setCalendar={props.setCalendar}
                                 calendar={props.calendar}
                                 data={props.data}
-                                setData={props.setData} />
+                                setData={props.setData}
+                            />
+                            <th>
+                                Result
+                            </th>
                         </tr> :
                         <tr>
                             <th>직전 기수</th>

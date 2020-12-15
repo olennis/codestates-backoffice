@@ -1,7 +1,8 @@
 // @flow ' 
 import axios from 'axios';
 import * as React from 'react';
-import { Student } from '../molecules/Student';
+import styled from "styled-components";
+
 type Cohort = {
     cohort: string,
     nth: string,
@@ -10,7 +11,7 @@ type Cohort = {
 export const CohortButton = (Props: Cohort) => {
     return (
         <span>
-            <button onClick={() => {
+            <Button style={{ width: "20%", height: '55px', marginLeft: "5px" }} onClick={() => {
                 axios
                     .get(
                         ` https://q4xflu1p8i.execute-api.us-east-1.amazonaws.com/dev/getUsersByCohort?cohort=${Props.cohort} ${Props.nth}기`
@@ -20,8 +21,21 @@ export const CohortButton = (Props: Cohort) => {
                     })
                     .catch((err) => { console.log(err) })
             }}>
-                기수 찾기!
-                </button>
+                Go
+                </Button>
         </span>
     );
 };
+
+const Button = styled.button`
+    background-color: rgb(65, 83, 170);
+    border: none;
+    border-radius: 5px;
+    color: lightgray;
+    &:hover {
+        color: white;
+    }
+    &:active {
+        transform: translateY(1px);
+    }
+`

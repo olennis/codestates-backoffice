@@ -1,6 +1,10 @@
 // @flow 
-import * as React from 'react';
-import Alert from '@material-ui/lab/Alert';
+import React from 'react';
+import GithubNo from "../atoms/Image/GithubNo.png"
+import GithubYes from "../atoms/Image/GithubYes.jpg"
+import SlackNo from "../atoms/Image/SlackNo.jpg"
+import SlackYes from "../atoms/Image/SlackYes.jpg"
+
 type Props = {
     student: any
 };
@@ -9,36 +13,36 @@ export const Result = (props: Props) => {
         <span>
             {
                 props.student.result.githubJoin === 'SUCCESS' ?
-                    <span>🟢</span> :
+                    <span><img src={GithubYes} width="32" height="32" /></span> :
                     props.student.result.githubJoin === 'FAIL' ?
-                        <span>🔴</span> :
+                        <span><img src={GithubNo} width="32" height="32" /></span> :
                         props.student.result.githubJoin === 'NONE' ?
                             <span></span> :
                             <span></span>
             }
             {
                 props.student.result.githubKick === 'SUCCESS' ?
-                    <span>🟢</span> :
+                    <span><img src={GithubYes} width="32" height="32" /></span> :
                     props.student.result.githubKick === 'FAIL' ?
-                        <span>🔴</span> :
+                        <span><img src={GithubNo} width="32" height="32" /></span> :
                         props.student.result.githubKick === 'NONE' ?
                             <span></span> :
                             <span></span>
             }
             {
                 props.student.result.slackJoin === 'SUCCESS' ?
-                    <span>🟢</span> :
+                    <span><img src={SlackYes} width="32" height="32" /></span> :
                     props.student.result.slackJoin === 'FAIL' ?
-                        <span>🔴</span> :
+                        <span><img src={SlackNo} width="32" height="32" /></span> :
                         props.student.result.slackJoin === 'NONE' ?
                             <span></span> :
                             <span></span>
             }
             {
                 props.student.result.slackKick === 'SUCCESS' ?
-                    <span>🟢</span> :
+                    <span><img src={SlackYes} width="32" height="32" /></span> :
                     props.student.result.slackKick === 'FAIL' ?
-                        <span>🔴</span> :
+                        <span><img src={SlackNo} width="32" height="32" /></span> :
                         props.student.result.slackKick === 'NONE' ?
                             <span></span> :
                             <span></span>

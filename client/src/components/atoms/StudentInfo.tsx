@@ -19,6 +19,7 @@ export const StudentInfo = (props: Props) => {
 };
 
 const InfoButton = styled.button`
+    margin-left: 10px;
     padding: 15px 18px;
     font-size: 13px;
     font-weight: bold;
@@ -27,18 +28,20 @@ const InfoButton = styled.button`
     outline: none;
     color: #050505;
     letter-spacing: 4px;
-    background-color: transparent;
+    background-color: white;
     border: none;
     border-radius: 15px;
-    border: 1px solid white;
     margin-left: 30px;
     background-image: linear-gradient(
-    120deg, transparent 0%, transparent 50%, rgb(7, 134, 148) 70%
+    120deg, transparent 0%, transparent 50%, rgb(65, 83, 170) 70%
     );
     background-size: 230%;
     transition: all 0.5s;
     &:hover {
         color: white;
         background-position: 100%;
-    }
+    };
+    &:active {
+        transform: translateY(10px);
+    };
 `

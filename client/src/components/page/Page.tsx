@@ -47,6 +47,9 @@ function Page() {
       </HeaderTab>
       <BodySection>
         <FixScroll>
+          <FilterHeader>
+            Filters
+          </FilterHeader>
           <SearchCohort
             cohort={cohort}
             setCohort={setCohort}
@@ -58,7 +61,7 @@ function Page() {
           />
         </FixScroll>
         {data.length === 0 ?
-          <div></div>
+          <></>
           :
           <>
             <StudentList
@@ -100,7 +103,6 @@ function Page() {
 // * grid-gab --> 위의 헤더와 얼마나 간격을 둘지
 // * grid-template-rows -> 헤더안쪽의 범위
 const Container = styled.div`  
-  border: 1px solid red;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 110px;
@@ -113,16 +115,14 @@ const Container = styled.div`
 `
 
 const HeaderTab = styled.div`
-
-
   background-color: rgb(242, 246, 252);
   border-radius: 1em;
 
 `
 const BodySection = styled.div`
-  border: 1px solid black;
+
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 3fr;
   grid-auto-rows: minmax(100px, auto);
   background-color : rgb(248, 249, 251);
 `
@@ -130,10 +130,26 @@ const BodySection = styled.div`
 const FixScroll = styled.div`
   position: fixed;
   z-index: 1;
-  background: #eee;
-  margin-left: 15px;
   font-size: 28px;
   padding: 0px 10px;
+  border: 1px solid rgb(238, 238, 240);
+  background-color: white;
+  text-align: center;
+  font-family: system-ui;
+  font-size: 18px;
+  padding-top: 20px;
+  width: 20%;
+  height: 370px;
+`
+
+const FilterHeader = styled.button`
+  background: rgb(65, 83, 170);
+  color: white;
+  height: 50px;
+  border-radius: 5px;
+  margin: auto;
+  width: 82%;
+  border: none;
 `
 
 export default Page;

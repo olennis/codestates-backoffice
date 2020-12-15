@@ -18,6 +18,7 @@ export const ChangeCohortTab = (props: Props) => {
 };
 
 const CohortButton = styled.button`
+    margin-left: 10px;
     padding: 15px 25px;
     font-size: 13px;
     font-weight: bold;
@@ -26,16 +27,20 @@ const CohortButton = styled.button`
     outline: none;
     color: #050505;
     letter-spacing: 4px;
-    background-color: transparent;
+    background-color: white;
     border: none;
     border-radius: 15px;
     border: 1px solid white;
     background-image: linear-gradient(
-    120deg, transparent 0%, transparent 50%, rgb(37, 181, 187) 70%
+    120deg, transparent 0%, transparent 50%, rgb(65, 83, 170) 70%
     );
     background-size: 230%;
     transition: all 0.5s;
     &:hover {
         color: white;
         background-position: 100%;
+    };
+    &:active {
+        transform: translateY(10px);
+    }
 `

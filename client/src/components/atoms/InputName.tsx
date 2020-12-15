@@ -1,4 +1,6 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
+
 type setName = {
     setName: React.Dispatch<React.SetStateAction<string>>
 };
@@ -7,8 +9,14 @@ export const InputName = (Props: setName) => {
         await Props.setName(e.target.value)
     }
     return (
-        <span>
-            <input onChange={(e: any) => changeName(e)} placeholder='이름을 입력해주세요'></input>
-        </span>
+        <TextField onChange={(e: any) => changeName(e)}
+            style={{ width: "60%" }}
+            label="이름입력"
+            variant="outlined"
+            id="outlined-basic"
+            placeholder='이름 입력'
+        >
+        </TextField>
     );
 };
+

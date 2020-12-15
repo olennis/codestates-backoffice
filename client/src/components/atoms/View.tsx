@@ -3,7 +3,6 @@ import * as React from 'react';
 import styled from "styled-components"
 import { createStyles, makeStyles, withStyles, Theme } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 type setView = {

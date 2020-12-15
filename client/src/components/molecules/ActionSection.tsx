@@ -2,6 +2,7 @@
 import React from 'react'
 import { SelectAction } from "../atoms/SelectAction"
 import { SendButton } from "../atoms/SendButton"
+import styled from "styled-components";
 
 type Props = {
     action: any
@@ -23,17 +24,22 @@ export const ActionSection = (props: Props) => {
             <SelectAction
                 action={props.action}
                 setAction={props.setAction} />
-            <SendButton
-                data={props.data}
-                cohort={props.cohort}
-                nth={props.nth}
-                gitCheck={props.gitCheck}
-                slackCheck={props.slackCheck}
-                calendar={props.calendar}
-                action={props.action}
-                setData={props.setData}
-
-            />
+            <Space>
+                <SendButton
+                    data={props.data}
+                    cohort={props.cohort}
+                    nth={props.nth}
+                    gitCheck={props.gitCheck}
+                    slackCheck={props.slackCheck}
+                    calendar={props.calendar}
+                    action={props.action}
+                    setData={props.setData}
+                />
+            </Space>
         </div>
     );
 };
+
+const Space = styled.span`
+    padding-left: 5px;
+`

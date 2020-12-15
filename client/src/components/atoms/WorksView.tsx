@@ -18,6 +18,7 @@ export const WorksView = (props: Props) => {
 };
 
 const WorksButton = styled.button`
+    margin-left: 10px;
     padding: 15px 25px;
     font-size: 13px;
     font-weight: bold;
@@ -26,12 +27,12 @@ const WorksButton = styled.button`
     outline: none;
     color: #050505;
     letter-spacing: 4px;
-    background-color: transparent;
+    background-color: white;
     border: none;
     border-radius: 15px;
     border: 1px solid white;
     background-image: linear-gradient(
-    120deg, transparent 0%, transparent 50%, rgb(154, 200, 182) 70%
+    120deg, transparent 0%, transparent 50%, rgb(65, 83, 170) 70%
     );
     background-size: 230%;
     transition: all 0.5s;
@@ -39,6 +40,8 @@ const WorksButton = styled.button`
         color: white;
         font-weight: bold;
         background-position: 100%;
-
+    };
+    &:active {
+        transform: translateY(10px);
     }
 `

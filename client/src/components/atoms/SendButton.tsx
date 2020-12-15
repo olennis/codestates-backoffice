@@ -58,7 +58,7 @@ export const SendButton = (props: Props) => {
     }
     return (
 
-        <Button color='primary' onClick={() => { sendData() }}>Go!</Button>
+        <Button color='primary' variant="contained" onClick={() => { sendData() }}>Go!</Button>
 
     );
 };
