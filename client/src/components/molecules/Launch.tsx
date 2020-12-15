@@ -38,6 +38,7 @@ export const Launch = (props: Props) => {
                 view={props.view}
                 setSplitData={props.setSplitData}
                 checkNum={props.checkNum}
+                splitData={props.splitData}
             />
 
             <ActionSection cohort={props.cohort}
@@ -60,5 +61,6 @@ const Container = styled.div`
     justify-content:space-between;
     width:98%;
     padding: 10px;
+    
     
 `
