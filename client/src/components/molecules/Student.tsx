@@ -51,6 +51,11 @@ const StudentInfo = styled.th`
 `
 const StudentTr = styled.tr`
     border: solid 5px rgb(245,246,247);
+    color:gray;
+    &:hover {
+        color: black;
+        background-color: rgb(242, 246, 252)
+    }
 `
 
 

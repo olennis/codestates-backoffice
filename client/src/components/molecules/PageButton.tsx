@@ -4,6 +4,7 @@ import { LeftButton } from '../atoms/LeftButton';
 import { PageNum } from '../atoms/PageNum';
 import { RightButton } from '../atoms/RightButton';
 import { View } from '../atoms/View'
+import styled from "styled-components"
 
 
 type Props = {
@@ -14,6 +15,7 @@ type Props = {
     setSplitData: any
     setView: any
     checkNum: any
+    splitData: any
 }
 export const PageButton = (props: Props) => {
     useEffect(() => { // props.data 이 들어오는데 view 만큼 배열을 짤라
@@ -41,21 +43,35 @@ export const PageButton = (props: Props) => {
 
 
     return (
-        <div>
+        <Container>
             <View
                 view={props.view}
                 setView={props.setView}
             />
-            <LeftButton pageNum={props.pageNum} setPageNum={props.setPageNum} />
-            {
+            <CenterDiv>
+
+                <LeftButton pageNum={props.pageNum} setPageNum={props.setPageNum} />
+                {/* {
                 props.view === '1' ?
                     <PageNum setPageNum={props.setPageNum} count={1} />
                     :
                     [...Array(Math.ceil(props.data.length / props.view))].map((n: any, idx: number) => {
                         return <PageNum key={idx} setPageNum={props.setPageNum} count={idx + 1} ></PageNum>
                     })
-            }
-            <RightButton pageNum={props.pageNum} setPageNum={props.setPageNum} view={props.view} data={props.data} />
+            } */}
+                {
+                    props.view === '1' ?
+                        <PageNum setPageNum={props.setPageNum} count={1}></PageNum>
+                        :
+                        <span>
+                            <PageNum setPageNum={props.setPageNum} count={props.pageNum}></PageNum>...
+                        <PageNum setPageNum={props.setPageNum} count={props.splitData[0].length}></PageNum>
+                        </span>
+                }
+
+                <RightButton pageNum={props.pageNum} setPageNum={props.setPageNum} view={props.view} data={props.data} />
+            </CenterDiv>
+
 
 
             {/* {props.view === '1' ?
@@ -64,6 +80,17 @@ export const PageButton = (props: Props) => {
 
             } */}
             {/* 아톰까지 내리기 귀찮아서...걍 여기 만들었어요..프롭스 너무 귀찮... */}
-        </div>
+        </Container>
     );
 };
+const CenterDiv = styled.div`
+    text-align:center;
+`
+
+const Container = styled.div`
+    justify-content:space-between;
+    display:flex;
+    flex-direction:row;
+    width:55%;
+    border:pink
+`

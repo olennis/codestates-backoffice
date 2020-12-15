@@ -122,16 +122,16 @@ const HeaderTab = styled.div`
 const BodySection = styled.div`
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
   grid-auto-rows: minmax(100px, auto);
   background-color : rgb(248, 249, 251);
 `
 
 const FixScroll = styled.div`
   position: fixed;
-  z-index: 1,
+  z-index: 1;
   background: #eee;
-  margin-left: 40px;
+  margin-left: 15px;
   font-size: 28px;
   padding: 0px 10px;
 `

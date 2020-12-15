@@ -66,6 +66,10 @@ export const MoveCohort = (props: Props) => {
 
 const StudentTr = styled.tr`
     border: solid 5px rgb(245,246,247);
+    color:black;
+    &:hover {
+        background-color: rgb(242, 246, 252)
+    }
 `
 const Student = styled.th`
     padding-top: 20px;
