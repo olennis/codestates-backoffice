@@ -21,7 +21,7 @@ interface Props {
     splitData: any
     view: any
     checkNum: any
-    setCheckNum: any
+    setCheckNum: Function
     setGitCheck: any
     setSlackCheck: any
     setCalendar: any
