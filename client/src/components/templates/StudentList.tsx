@@ -23,7 +23,7 @@ interface Props {
     checkNum: any
     setCheckNum: Function
     setGitCheck: any
-    setSlackCheck: any
+    setSlackCheck: Function
     setCalendar: any
     cohort: any
     nth: any
