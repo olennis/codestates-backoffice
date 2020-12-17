@@ -35,7 +35,7 @@ const CohortButton = styled.button`
     120deg, transparent 0%, transparent 50%, rgb(65, 83, 170) 70%
     );
     background-size: 230%;
-    transition: all 0.5s;
+    transition: all 0.2s;
     &:hover {
         color: white;
         background-position: 100%;

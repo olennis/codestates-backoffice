@@ -139,14 +139,13 @@ const FixScroll = styled.div`
   font-size: 18px;
   padding-top: 20px;
   width: 20%;
-  height: 370px;
+  height: 400px;
 `
 
-const FilterHeader = styled.button`
-  background: rgb(65, 83, 170);
-  color: white;
+const FilterHeader = styled.div`
+  background: white;
+  color: rgb(65, 83, 170);
   height: 50px;
-  border-radius: 5px;
   margin: auto;
   width: 82%;
   border: none;

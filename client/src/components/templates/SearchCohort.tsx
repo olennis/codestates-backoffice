@@ -35,4 +35,5 @@ const EveryFilter = styled.div`
     padding-top: 2em;
     text-align: center;
     background: rgb(248, 249, 251);
+    padding-bottom: 2em;
 `

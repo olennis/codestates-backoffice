@@ -13,36 +13,36 @@ export const Result = (props: Props) => {
         <span>
             {
                 props.student.result.githubJoin === 'SUCCESS' ?
-                    <span><img src={GithubYes} width="32" height="32" /></span> :
+                    <span style={{ paddingLeft: '5px' }}><img src={GithubYes} width="32" height="32" /></span> :
                     props.student.result.githubJoin === 'FAIL' ?
-                        <span><img src={GithubNo} width="32" height="32" /></span> :
+                        <span style={{ paddingLeft: '5px' }}><img src={GithubNo} width="32" height="32" /></span> :
                         props.student.result.githubJoin === 'NONE' ?
                             <span></span> :
                             <span></span>
             }
             {
                 props.student.result.githubKick === 'SUCCESS' ?
-                    <span><img src={GithubYes} width="32" height="32" /></span> :
+                    <span style={{ paddingLeft: '5px' }}><img src={GithubYes} width="32" height="32" /></span> :
                     props.student.result.githubKick === 'FAIL' ?
-                        <span><img src={GithubNo} width="32" height="32" /></span> :
+                        <span style={{ paddingLeft: '5px' }}><img src={GithubNo} width="32" height="32" /></span> :
                         props.student.result.githubKick === 'NONE' ?
                             <span></span> :
                             <span></span>
             }
             {
                 props.student.result.slackJoin === 'SUCCESS' ?
-                    <span><img src={SlackYes} width="32" height="32" /></span> :
+                    <span style={{ paddingLeft: '5px' }}><img src={SlackYes} width="32" height="32" /></span> :
                     props.student.result.slackJoin === 'FAIL' ?
-                        <span><img src={SlackNo} width="32" height="32" /></span> :
+                        <span style={{ paddingLeft: '5px' }}><img src={SlackNo} width="32" height="32" /></span> :
                         props.student.result.slackJoin === 'NONE' ?
                             <span></span> :
                             <span></span>
             }
             {
                 props.student.result.slackKick === 'SUCCESS' ?
-                    <span><img src={SlackYes} width="32" height="32" /></span> :
+                    <span style={{ paddingLeft: '5px' }}><img src={SlackYes} width="32" height="32" /></span> :
                     props.student.result.slackKick === 'FAIL' ?
-                        <span><img src={SlackNo} width="32" height="32" /></span> :
+                        <span style={{ paddingLeft: '5px' }}><img src={SlackNo} width="32" height="32" /></span> :
                         props.student.result.slackKick === 'NONE' ?
                             <span></span> :
                             <span></span>
