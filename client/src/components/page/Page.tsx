@@ -48,7 +48,7 @@ function Page() {
       <BodySection>
         <FixScroll>
           <FilterHeader>
-            Filters
+            Filters {checkNum}
           </FilterHeader>
           <SearchCohort
             cohort={cohort}
